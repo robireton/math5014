@@ -1,15 +1,19 @@
 \documentclass[12pt]{article}
-\usepackage{amssymb, amsmath, amsthm}
-%\usepackage{graphicx,tikz}
-\usepackage{fancyhdr}
-\usepackage{faktor}
-%\usepackage{enumerate}
 \usepackage[top=1.0in, bottom=0.5in, left=0.75in, right=2.5in]{geometry}
-\setlength{\headheight}{28pt}
+\usepackage{fancyhdr, fourier-orns}
+\usepackage{amsmath, amssymb, amsthm}
+%\usepackage{graphicx,tikz}
+%\usepackage{enumerate}
 \pagestyle{fancy}
+
+\renewcommand\headrule{\hrulefill
+\raisebox{-2.1pt}[10pt][10pt]{\quad\leafright\,\decosix\,\leafleft\quad}\hrulefill}
+
+\setlength\headheight{38pt}
+\setlength\headwidth{7in}
 \fancyhf{}
 \lhead{Group Theory\\ Spring 2018}
-\rhead{Homework Bundle \# 1\\ pg. \thepage}
+\rhead{Homework Bundle \#\,1\\ page \thepage}
 \chead{Rob Ireton}
 
 
