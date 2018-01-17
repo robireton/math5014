@@ -80,6 +80,7 @@
 	\end{proof}
 \end{exercise}
 
+\newpage
 
 \begin{exercise}{1.10}{6.2}
   {\noindent}Let $\alpha, \beta\in S_n$. Define $\alpha^0=1$, $\alpha^1=\alpha$, and for $k\ge 2$ $\alpha^k$ is the composition of $\alpha$ with itself $k$ times.
@@ -87,44 +88,30 @@
     \item Prove that if $\alpha$ and $\beta$ are disjoint, then $\forall k\ge0$, $(\alpha\beta)^k=\alpha^k\beta^k$
     \bigskip
 
-  	\begin{proof}
-			When $k=0$, we have $(\alpha\beta)^0 = 1 = 1\circ 1 = \alpha^0\beta^0$.\\
-			When $k=1$, $(\alpha\beta)^1 = \alpha\beta = \alpha^1\beta^1$.\\
-			
+		\begin{proof}[Corollary of Lemma from 1.8]
+			If $\alpha:X\to X$ and $\beta:X\to X$ are disjoint permutations of $X$, then if $\beta$ moves $x\in X$, $\alpha$ fixes both $x$ and $\beta(x)$.
+		\end{proof}
+		\bigskip
 
+  	\begin{proof}
+			From the definition, when $k=0$, we have $(\alpha\beta)^0 = 1 = 1\circ 1 = \alpha^0\beta^0$. Likewise, when $k=1$, $(\alpha\beta)^1 = \alpha\beta = \alpha^1\beta^1$.\\
+			\\
+			Now, suppose that $(\alpha\beta)^n = \alpha^n\beta^n$. Then, $(\alpha\beta)((\alpha\beta)^n) = (\alpha\beta)^{n+1} = (\alpha\beta)(\alpha^n\beta^n)$.
+			$\alpha$ and $\beta$ are disjoint, so if $\beta$ moves $\alpha^n\beta^n$ then $\alpha$ fixes it and also $\beta(\alpha^n\beta^n)$ (see corollary).
+			This gives $(\alpha\beta)^{n+1} = \alpha^{n+1}\beta^{n+1}$. A similar argument holds if $\alpha$ moves and $\beta$ fixes.\\
+			\\
+			We know that $(\alpha\beta)^k=\alpha^k\beta^k$ holds for $k=0$ and $k=1$, so, by induction, it must hold for every $k>1$ as well.
   	\end{proof}
   	\vspace{1in}
 
     \item If $\alpha$ and $\beta$ are not disjoint, is the result still true? Justify your answer.
 	  \bigskip
+
+		The result is \textit{not} still true.\\
+		\\
+		Take $\alpha\in S_3 = (1\ 2\ 3)$ and $\beta\in S_3 = (1\ 3)$, which are not disjoint. $\alpha\beta = (2\ 3)$ and $(\alpha\beta)^2 = 1$. $\alpha^2 = (1\ 3\ 2)$. $\beta^2 = 1$.
+		$(\alpha\beta)^2 \neq \alpha^2\beta^2$, so this is a countexample.
   \end{itemize}
 \end{exercise}
-
-% \begin{exercise}{1.16}{3.5}
-% 	{\noindent}Let $\alpha\in S_n$ and $p\in \mathbb{N}$ be prime. Prove that if $\alpha^p=1$, then either $\alpha=1$, $\alpha$ is a $p$-cycle, or $\alpha$ is a product of disjoint $p$-cycles.
-% 	\bigskip
-%
-% 	put your proof here
-% \end{exercise}
-%
-% \begin{exercise}{1.18}{3.5}
-% 	{\noindent}Give an example of $\alpha. \beta, \gamma\in S_5$ such that:
-%   \begin{itemize}
-%   	\item $\alpha$ commutes with $\beta$
-%   	\item $\beta$ commutes with $\alpha$
-%   	\item $\alpha$ and $\gamma$ do not commute.
-%   \end{itemize}
-% 	\bigskip
-%
-% 	put your answer here
-% \end{exercise}
-%
-% \begin{exercise}{1.21}{6.2}
-% 	{\noindent}Show that $S_n$ has the same number of even permutations as odd permutations.
-%   [Hint: If $\tau$ is a transposition, consider the function $f : S_n\to S_n$ given by $f(\alpha)=\tau\alpha$.]
-% 	\bigskip
-%
-% 	put your proof here
-% \end{exercise}
 
 \end{document}
