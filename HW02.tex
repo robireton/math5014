@@ -36,7 +36,7 @@
 	Based on the results of Exercise 1.8---that if $\alpha$ and $\beta$ are disjoint permutations,
 	then they commute---choose $\alpha, \beta, \gamma\in S_5$ such that $\alpha, \beta$ disjoint,
 	$\beta, \gamma$ disjoint, $\alpha, \gamma$ not disjoint. e.g.:
-	$\alpha = (1\ 2)$; $\beta = (3\ 4)$; $\gamma = (1\ 5)$.
+	$\alpha = (1\enspace2)$;\quad $\beta = (3\enspace4)$;\quad $\gamma = (1\enspace5)$.
 \end{exercise}
 
 \begin{exercise}{1.21}{6.2}
@@ -59,40 +59,40 @@
 		\item Show that $\alpha$ is a permutation of $\zee_{11}$ and write it as a product of disjoint cycles.
 		\bigskip
 
-		A short Julia program:
+		A Julia expression:
 		\begin{verbatim}
-			julia> for x = 1:11
-			       println(x, ": ", 11 + (4x^2 - 3x^7) % 11)
-						 end
+			julia> string([n => 11+(4n^2-3n^7)%11 for n=1:11])
+			"Pair{Int64,Int64}[1=>12, 2=>6, 3=>9, 4=>5, 5=>3,
+			6=>10, 7=>2, 8=>8, 9=>4, 10=>7, 11=>11]"
 		\end{verbatim}
 		with results adjusted to use $1$--$11$ as class representitives, shows that, in two-rowed notation,
 		\[
-		\alpha = \bigl(\begin{smallmatrix}
+		\alpha = \bigl(\begin{array}{rrrrrrrrrrr}
 		    1 &  2 &  3 &  4 &  5 &  6 &  7 &  8 &  9 & 10 & 11 \\
 		    1 &  6 &  9 &  5 &  3 & 10 &  2 &  8 &  4 &  7 & 11
-		  \end{smallmatrix}\bigr)
+		  \end{array}\bigr)
 		\]
-		We can verify by inspection that $\alpha$ is a permutation. As a product of disjoint cycles, we have
-		\[ \alpha = (1)(2\ 6\ 10\ 7)(3\ 9\ 4\ 5)(8)(11) = (2\ 6\ 10\ 7)(3\ 9\ 4\ 5) \]
+		We can verify by inspection that $\alpha$ is a permutation. As a product of disjoint cycles, we have:
+		\[ \alpha = (1)(2\enspace6\enspace10\enspace7)(3\enspace9\enspace4\enspace5)(8)(11) = (2\enspace6\enspace10\enspace7)(3\enspace9\enspace4\enspace5) \]
 
 		\item What is the parity of $\alpha$?
 		\bigskip
 
 		Using Theorem 1.3, We can express $\alpha$ as a product of transpositions:
-		\[ \alpha = (2\ 7)(2\ 10)(2\ 6)(3\ 5)(3\ 4)(3\ 9) \]
+		\[ \alpha = (2\enspace7)(2\enspace10)(2\enspace6)(3\enspace5)(3\enspace4)(3\enspace9) \]
 		There are an even number of transpositions, so, by definition, $\alpha$ is even.
 
 		\item What is $\alpha^{-1}$?
 		\bigskip
 
-		$\alpha^{-1}=(2\ 7\ 10\ 6)(3\ 5\ 4\ 9)$.
+		$\alpha^{-1}=(2\enspace7\enspace10\enspace6)(3\enspace5\enspace4\enspace9)$.
 	\end{itemize}
 \end{exercise}
 
 
-\begin{exercise}{1.36}{6.2}
-	{\noindent}Prove that the following four permutations form a group, denoted $\mathbf{V}$, called the (Klein) Four-group.
-	\[(1);\; (1\ 2)(3\ 4);\; (1\ 3)(2\ 4);\; (1\ 4)(2\ 3).\]
+\begin{exercise}{1.36}{3.5}
+	{\noindent}Prove that the following four permutations form a group, denoted $\mathbf{V}$, called the \\(Klein) Four-group.
+	\[(1);\quad(1\enspace2)(3\enspace4);\quad(1\enspace3)(2\enspace4);\quad(1\enspace4)(2\enspace3).\]
 	\bigskip
 
 \end{exercise}
