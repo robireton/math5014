@@ -4,6 +4,7 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{ebgaramond, ebgaramond-maths}
 \usepackage[makeroom]{cancel}
+\usepackage{plex-mono}
 
 \pagestyle{fancy}
 \setlength\headheight{28pt}
@@ -76,10 +77,12 @@
 		\end{verbatim}
 		with results adjusted to use $1$--$11$ as class representitives, shows that, in two-rowed notation,
 		\[
-		\alpha = \bigl(\begin{array}{rrrrrrrrrrr}
+		\alpha = \bigl(
+			\begin{array}{rrrrrrrrrrr}
 		    1 &  2 &  3 &  4 &  5 &  6 &  7 &  8 &  9 & 10 & 11 \\
 		    1 &  6 &  9 &  5 &  3 & 10 &  2 &  8 &  4 &  7 & 11
-		  \end{array}\bigr)
+		  \end{array}
+			\bigr)
 		\]
 		We can verify by inspection that $\alpha$ is a permutation. As a product of disjoint cycles, we have:
 		\[ \alpha = (1)(2\enspace6\enspace10\enspace7)(3\enspace9\enspace4\enspace5)(8)(11) = (2\enspace6\enspace10\enspace7)(3\enspace9\enspace4\enspace5) \]
