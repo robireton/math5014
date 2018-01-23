@@ -3,6 +3,7 @@
 \usepackage{fancyhdr, textpos}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{ebgaramond, ebgaramond-maths}
+\usepackage[makeroom]{cancel}
 
 \pagestyle{fancy}
 \setlength\headheight{28pt}
@@ -51,6 +52,10 @@
 	{\noindent}Prove: a group $G$ in which $\forall x\in G$, $x^2=e$ must be abelian.
 	\bigskip
 
+	{\noindent}Let $a, b\in G$. Observe that $b^2 = bb = e$. Multiplying by $a$ on the left and on the right gives
+	$abba = aea = e$. Next observe that $ab\in G$ so $(ab)(ab) = e$, so we have $abab = e = abba$. The result of
+	exercise 1.6 lets us cancel, giving $\cancel{a}\cancel{b}ab = \cancel{a}\cancel{b}ba$. Since $ab = ba\enspace
+	\forall a, b \in G$, G is, by definition, abelian.
 \end{exercise}
 
 \begin{exercise}{1.29}{6.2}
