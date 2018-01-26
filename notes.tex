@@ -15,6 +15,93 @@
 
 \begin{document}
 \chapter{Groups and Homomorphisms}
+\section{Permutations}
+\begin{definition}
+	If $X$ is a nonempty set, a \term{permutation} of $X$ is a bijection $\alpha:X\to X$. We denote the set of all permutations of $X$ by $S_X$.
+\end{definition}
+
+\section{Cycles}
+\begin{definition}
+	If $x\in X$ and $\alpha\in S_X$, then $\alpha$ \term{fixes} $x$ if $\alpha(x)=x$ and $\alpha$ \term{moves} $x$ if $\alpha(x)\neq x$.
+\end{definition}
+
+\begin{definition}
+	Let $i_1, i_2, \dots, i_r$ be distinct integers between $1$ and $n$. If $\alpha\in S_n$ fixes the remaining $n-r$ integers and if
+	\[ \alpha(i_1)=i_2,\;\alpha(i_2)=i_3,\;\dots,\;\alpha(i_{r-1})=i_r,\;\alpha(i_r)=i_1, \]
+	then $\alpha$ is an \term{r-cycle}; one also says that $\alpha$ is a cycle of \term{length} r. Denote $\alpha$ by $(i_1\enspace i_2\enspace \cdots \enspace i_r)$.
+	\smallskip
+
+	Every 1-cycle fixes every element of $X$, and so all 1-cycles are equal to the identity. A 2-cycle, which merely interchanges a pair of elements, is called a \term{transposition}.
+\end{definition}
+
+\begin{definition}
+	Two permutations $\alpha, \beta\in S_X$ are \term{disjoint} if every $x$ moved by one is fixed by the other.
+	In symbols, if $\alpha(x)\neq x$, then $\beta(x)=x$ and if $\beta(y)\neq y$, then $\alpha(y)=y$
+	(of course it is possible that there is $z\in X$ with $\alpha(z)=z=\beta(z)$).
+	A family of permutations $\alpha_1,\alpha_2,\dots,\alpha_m$ is \term{disjoint} if each pair of them is disjoint.
+\end{definition}
+
+\section{Factorization into Disjoint Cycles}
+\begin{theorem}
+	Every permutation $alpha\in S_n$ is either a cycle or a product of disjoint cycles.
+\end{theorem}
+
+\begin{definition}
+	A \term{complete factorization} of a permutation $\alpha$ is a factorization of $\alpha$ as a product of disjoint cycles which contains one 1-cycle $(i)$ for every $i$ fixed by $\alpha$.
+	\smallskip
+
+	In a complete factorization of a permutation $\alpha$, every $i$ between $1$ and $n$ occurs in exactly one of the cycles.
+\end{definition}
+
+\begin{theorem}
+	Let $\alpha\in S_n$ and let $\alpha=\beta_1\dots\beta_t$ be a complete factorization into disjointcycles. This factorization is unique except for the order in which the factors occur.
+\end{theorem}
+
+\section{Even and Odd Permutations}
+\begin{theorem}
+	Every permutation $\alpha\in S_n$ is a product of transpositions. For each cycle of length $r>1$:
+	\[ (i_1\enspace i_2\enspace\dots\enspace i_r)=(i_1\enspace i_r)(i_1\enspace i_{r-1})\dots(i_1\enspace i_2)\]
+\end{theorem}
+
+\begin{definition}
+	A permutation $\alpha\in S$ is \term{even} if it is a product of an even number of transpositions; otherwise, $alpha$ is \term{odd}.
+\end{definition}
+
+\begin{lemma}
+	If $k, l\geq0$, then
+	\[ (a\enspace b)(a\enspace c_1\enspace\dots\enspace c_k\enspace b\enspace d_1\enspace\dots\enspace d_l) = (a\enspace c_1\enspace\dots\enspace c_k)(b\enspace d_1\enspace\dots\enspace d_l) \]
+	and
+	\[ (a\enspace b)(a\enspace c_1\enspace\dots\enspace c_k)(b\enspace d_1\enspace\dots\enspace d_l) = (a\enspace c_1\enspace\dots\enspace c_k\enspace b\enspace d_1\enspace\dots\enspace d_l) \]
+\end{lemma}
+
+\begin{definition}
+	If $\alpha\in S_n$ and $\alpha=\beta_1\dots\beta_t$ is a complete factorization into disjoint cycles, then \term{signum} $\alpha$ is defined by
+	\[ \text{sgn}(\alpha) = (-1)^{n-t}. \]
+\end{definition}
+
+\begin{lemma}
+	If $\beta\in S_n$ and $\tau$ is a transposition, then
+	\[ \textnormal{sgn}(\tau\beta) = -\textnormal{sgn}(\beta). \]
+\end{lemma}
+
+\begin{lemma}
+	For all $\alpha, \beta\in S_n$,
+	\[ \textnormal{sgn}(\alpha\beta) = \textnormal{sgn}(\alpha)\,\textnormal{sgn}(\beta). \]
+\end{lemma}
+
+\begin{theorem}
+	\quad
+	\renewcommand{\labelenumi}{\textnormal{(\roman{enumi})}}
+	\begin{enumerate}
+		\item A permutation $\alpha\in S_n$ is even if and only if $\textnormal{sgn}(\alpha)=1$.
+		\item A permutation $\alpha\in S_n$ is odd if and only if it is a product of an odd number of transpositions.
+	\end{enumerate}
+\end{theorem}
+
+\section{Semigroups}
+\section{Groups}
+\section{Homomorphisms}
+
 \chapter{The Isomorphism Theorems}
 \section{Subgroups}
 \begin{definition}
