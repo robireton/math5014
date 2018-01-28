@@ -1,6 +1,10 @@
 \documentclass[12pt]{report}
 \usepackage[top=0.75in, bottom=0.75in, left=1in, right=1in]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
+% \usepackage{mathspec} %loads fontspec as well
+% \setallmainfonts(Digits,Latin){Alegreya}
+\usepackage{Alegreya}
+
 \title{Group Theory Notes}
 
 \newtheorem{theorem}{Theorem}[chapter]
@@ -9,6 +13,7 @@
 \theoremstyle{definition}
 \newtheorem*{definition}{Definition}
 \newtheorem*{notation}{Notation}
+\newtheorem*{remark}{Remark}
 
 \newcommand{\term}[1]{\textbf{\textit{#1}}}
 \newcommand{\gen}[1]{{\langle}#1{\rangle}}
@@ -66,7 +71,7 @@
 \end{theorem}
 
 \begin{definition}
-	A permutation $\alpha\in S$ is \term{even} if it is a product of an even number of transpositions; otherwise, $alpha$ is \term{odd}.
+	A permutation $\alpha\in S$ is \term{even} if it is a product of an even number of transpositions; otherwise, $\alpha$ is \term{odd}.
 \end{definition}
 
 \begin{lemma}
@@ -100,8 +105,41 @@
 \end{theorem}
 
 \section{Semigroups}
+\begin{definition}
+	A (binary) \term{operation} on a nonempty set $G$ is a function $\mu:G\times G\to G$.
+\end{definition}
+
+\begin{definition}
+	An operation $\ast$ on a set $G$ is \term{associative} if \[(a\ast b)\ast c=a\ast(b\ast c) \] for every $a, b, c\in G$.
+\end{definition}
+
+\begin{definition}
+	An expression $a_1\ast a_2\ast\cdots\ast a_n$ \term{needs no parentheses} if, no matter what choices of multiplications of adjacent factors are made, the resulting elements of $G$ are all equal.
+\end{definition}
+
+\begin{theorem}[Generalized Associativity]
+	If $\ast$ is an associative operation on a set $G$, then every expression $a_1\ast a_2\ast\cdots\ast a_n$ needs no parentheses.
+\end{theorem}
+
+\begin{definition}
+	A \term{semigroup} $(G,\ast)$ is a nonempty set $G$ equipped with an associative operation $\ast$.
+\end{definition}
+
+\begin{definition}
+	Let $G$ be a semigroup and let $a\in G$. Define $a^1=a$ and, for $n\geq1$, define $a^{n+1}=a\ast a^n$.
+\end{definition}
+
+\begin{corollary}
+	Let $G$ be a semigroup, let $a\in G$, and let $m$ and $n$ be positive integers. Then $a^m\ast a^n=a^{m+n}=a^n\ast a^m$ and $(a^m)^n=a^{mn}=(a^n)^m$.
+\end{corollary}
+
 
 \section{Groups}
+\begin{remark}
+	The four permutations $\{1,\;(1\enspace2)(3\enspace4),\;(1\enspace3)(2\enspace4),\;(1\enspace4)(2\enspace3) \}$
+	form a group $\mathbf{V}$ called the \term{Klein 4-group}.
+\end{remark}
+
 \begin{definition}
 	A \term{group} is a semigroup $G$ containing an element $e$ such that:
 	\begin{enumerate}
@@ -272,7 +310,7 @@
 \end{corollary}
 
 \begin{definition}
-	The \term{Euler \varphi-function} is defined as follows:
+	The \term{Euler 𝝋-function} is defined as follows:
 	\[ \varphi(1)=1;\quad\text{ if }n>1,\text{ then }\varphi(n)=|\{k:1\leq k<n\text{ and }(k, n)=1\}|. \]
 \end{definition}
 
