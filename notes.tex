@@ -13,6 +13,8 @@
 \newcommand{\term}[1]{\textbf{\textit{#1}}}
 \newcommand{\gen}[1]{{\langle}#1{\rangle}}
 
+\renewcommand{\labelenumi}{\textnormal{(\roman{enumi})}}
+
 \begin{document}
 \chapter{Groups and Homomorphisms}
 \section{Permutations}
@@ -91,7 +93,6 @@
 
 \begin{theorem}
 	\quad
-	\renewcommand{\labelenumi}{\textnormal{(\roman{enumi})}}
 	\begin{enumerate}
 		\item A permutation $\alpha\in S_n$ is even if and only if $\textnormal{sgn}(\alpha)=1$.
 		\item A permutation $\alpha\in S_n$ is odd if and only if it is a product of an odd number of transpositions.
@@ -99,10 +100,65 @@
 \end{theorem}
 
 \section{Semigroups}
+
 \section{Groups}
+\begin{definition}
+	A \term{group} is a semigroup $G$ containing an element $e$ such that:
+	\begin{enumerate}
+		\item $e\ast a=a=a\ast e$ for all $a\in G$;
+		\item for every $a\in G$, there is an element $b\in G$ with \[a\ast b=e=b\ast a.\]
+	\end{enumerate}
+	Exercises 1.1, 1.2, and 1.3 show that $S_X$ is a group with composition as operation; it is called the \term{symmetric group} on $X$.
+	When $X=\{1, 2, \dots, n\}$, then $S_X$ is denoted $S_n$ and it is called the \term{symmetric group on n letters}.
+\end{definition}
+
+\begin{definition}
+	A pair of elements $a$ and $b$ in a semigroup \term{commutes} if $a\ast b=b\ast a$. A group (or a semigroup) is \term{abelian} if every pair of its elements commutes.
+\end{definition}
+
+\begin{theorem}
+	If $G$ is a group, there is a unique element $e$ with $e\ast a=a=a\ast e$ for all $a\in G$. Moreover, for each $a\in G$, there is a unique $b\in G$ with $a\ast b=e=b\ast a$.
+\end{theorem}
+
+\begin{corollary}
+	If $G$ is a group and $a\in G$, then \[(a^{-1})^{-1}=a.\]
+\end{corollary}
+
+\begin{definition}
+	If $G$ is a group and $a\in G$, define the \term{powers} of $a$ as follows: if $n$ is a positive integer, then $a^n$ is defined as in any semigroup; define $a^0=e$; define $a^{-n}=(a^{-1})^n$.
+\end{definition}
+
+\begin{theorem}
+	If $G$ is a semigroup with an element $e$ such that:
+	\begin{enumerate}
+		\item $e\ast a=a$ for all $a\in G$; and
+		\item for each $a\in G$ there is an element $b\in G$ with $b\ast a=e$, then $G$ is a group.
+	\end{enumerate}
+\end{theorem}
+
+
 \section{Homomorphisms}
+\begin{definition}
+	Let $(G,\ast)$ and $(H,\circ)$ be groups. A function $f:G\to H$ is a \term{homomorphism} if, for all $a,b\in G$, \[f(a\ast b)=f(a)\circ f(b).\]
+	An \term{isomorphism} is a homomorphism that is also a bijection. We say that $G$ is \term{isomorphic} to $H$, denoted by $G\cong H$, if there exists an isomorphism $f:G\to H$.
+\end{definition}
+
+\begin{theorem}
+	Let $f:(G,\ast)\to(G',\circ)$ be a homomorphism.
+	\begin{enumerate}
+		\item $f(e)=e'$, where $e'$ is the identity in $G'$.
+		\item if $a\in G$, then $f(a^{-1})=f(a)^{-1}$.
+		\item if $a\in G$ and $n\in\mathbb{Z}$, then $f(a^n)=f(a)^n$.
+	\end{enumerate}
+\end{theorem}
+
+
 
 \chapter{The Isomorphism Theorems}
+\begin{notation}
+	We now drop the $\ast$ notation of the operation in a group. Henceforth, we shall write $ab$ instead of $a\ast b$, and we shall denote the identity element by $1$ instead of by $e$.
+\end{notation}
+
 \section{Subgroups}
 \begin{definition}
 	A nonempty subset $S$ of a group $G$ is a \term{subgroup} of $G$ if $s\in G$ implies $s^{-1}\in G$ and $s, t\in G$ imply $st\in G$.
