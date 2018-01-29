@@ -1,6 +1,10 @@
 \documentclass[12pt]{report}
 \usepackage[top=0.75in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
+% \usepackage{mathspec} %loads fontspec as well
+% \setallmainfonts(Digits,Latin){Alegreya}
+\usepackage{Alegreya}
+
 \title{Group Theory Notes}
 
 \newtheorem{theorem}{Theorem}[chapter]
@@ -13,6 +17,8 @@
 
 \newcommand{\term}[1]{\textbf{\textit{#1}}}
 \newcommand{\gen}[1]{{\langle}#1{\rangle}}
+
+\renewcommand{\labelenumi}{\textnormal{(\roman{enumi})}}
 
 \begin{document}
 \chapter{Groups and Homomorphisms}
@@ -65,7 +71,7 @@
 \end{theorem}
 
 \begin{definition}
-	A permutation $\alpha\in S$ is \term{even} if it is a product of an even number of transpositions; otherwise, $alpha$ is \term{odd}.
+	A permutation $\alpha\in S$ is \term{even} if it is a product of an even number of transpositions; otherwise, $\alpha$ is \term{odd}.
 \end{definition}
 
 \begin{lemma}
@@ -92,7 +98,6 @@
 
 \begin{theorem}
 	\quad
-	\renewcommand{\labelenumi}{\textnormal{(\roman{enumi})}}
 	\begin{enumerate}
 		\item A permutation $\alpha\in S_n$ is even if and only if $\textnormal{sgn}(\alpha)=1$.
 		\item A permutation $\alpha\in S_n$ is odd if and only if it is a product of an odd number of transpositions.
@@ -136,8 +141,27 @@
 \end{remark}
 
 \section{Homomorphisms}
+\begin{definition}
+	Let $(G,\ast)$ and $(H,\circ)$ be groups. A function $f:G\to H$ is a \term{homomorphism} if, for all $a,b\in G$, \[f(a\ast b)=f(a)\circ f(b).\]
+	An \term{isomorphism} is a homomorphism that is also a bijection. We say that $G$ is \term{isomorphic} to $H$, denoted by $G\cong H$, if there exists an isomorphism $f:G\to H$.
+\end{definition}
+
+\begin{theorem}
+	Let $f:(G,\ast)\to(G',\circ)$ be a homomorphism.
+	\begin{enumerate}
+		\item $f(e)=e'$, where $e'$ is the identity in $G'$.
+		\item if $a\in G$, then $f(a^{-1})=f(a)^{-1}$.
+		\item if $a\in G$ and $n\in\mathbb{Z}$, then $f(a^n)=f(a)^n$.
+	\end{enumerate}
+\end{theorem}
+
+
 
 \chapter{The Isomorphism Theorems}
+\begin{notation}
+	We now drop the $\ast$ notation of the operation in a group. Henceforth, we shall write $ab$ instead of $a\ast b$, and we shall denote the identity element by $1$ instead of by $e$.
+\end{notation}
+
 \section{Subgroups}
 \begin{definition}
 	A nonempty subset $S$ of a group $G$ is a \term{subgroup} of $G$
@@ -258,7 +282,7 @@
 \section{Cyclic Groups}
 
 \begin{definition}
-	The \term{Euler \varphi-function}, also called \term{Euler's totient function} is defined as follows:
+	The \term{Euler 𝝋-function}, also called \term{Euler's totient function} is defined as follows:
 	\[ \varphi(1)=1;\quad\text{ if }n>1,\text{ then }\varphi(n)=|\{k:1\leq k<n\text{ and }\gcd(k, n)=1\}|. \]
 	In other words, $\varphi(n)$ is the number of positive integers that are relatively prime to $n$.
 \end{definition}
