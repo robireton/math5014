@@ -1,9 +1,8 @@
 \documentclass[12pt]{report}
 \usepackage[top=0.75in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
-% \usepackage{mathspec} %loads fontspec as well
-% \setallmainfonts(Digits,Latin){Alegreya}
-\usepackage{Alegreya}
+\usepackage{mathspec} %loads fontspec as well
+\setallmainfonts(Digits,Latin,Greek){Alegreya}
 
 \title{Group Theory Notes}
 
@@ -282,7 +281,7 @@
 \section{Cyclic Groups}
 
 \begin{definition}
-	The \term{Euler 𝝋-function}, also called \term{Euler's totient function} is defined as follows:
+	The \term{Euler $\varphi$-function}, also called \term{Euler's totient function} is defined as follows:
 	\[ \varphi(1)=1;\quad\text{ if }n>1,\text{ then }\varphi(n)=|\{k:1\leq k<n\text{ and }\gcd(k, n)=1\}|. \]
 	In other words, $\varphi(n)$ is the number of positive integers that are relatively prime to $n$.
 \end{definition}
