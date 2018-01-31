@@ -25,8 +25,33 @@
 	\begin{enumerate}[(i.)]
 		\item Prove that $\gamma_a$ is an isomorphism.
 		\bigskip
+		\begin{proof}
+			Let $x,y\in G$.
+			\par
+			$\gamma_a(xy)=axya^{-1}=ax1ya^{-1}=axa^{-1}aya^{-1}=\gamma_a(x)\gamma_a(y)$.
+			Since $\gamma_a(xy)=\gamma_a(x)\gamma_a(y)$, $\gamma_a$ is a homomorphism.
+			\par
+			Suppose $\gamma_a(x)=\gamma_a(y)$. Then
+			\begin{align*}
+				axa^{-1}&=aya^{-1}\\
+				axa^{-1}a&=aya^{-1}a\\
+				a^{-1}axa^{-1}a&=a^{-1}aya^{-1}a\\
+				1x1&=1y1\\
+				x&=y
+			\end{align*}
+			$\gamma_a$ is injective.
+			\par
+			The closure of groups requires that $a,y\in G\implies ay\in G$. Also $a\in G\implies a^{-1}\in G$. Closure again gives that $aya^{-1}\in G$. We can see that, for any $y\in G$, we have a corresponding $aya^{-1}\in G$.
+			(\dots\textit{ insufficient argument }\dots) still need to show that $\forall y\in G,\exists x\in G\text{ such that }\gamma_a(x)=y$.
+			\par
+			Since $\gamma_a$ is a bijective homomorphism, it is, by definition, an isomorphism.
+		\end{proof}
 
 		\item If $a,b\in G$, prove that $\gamma_a\gamma_b=\gamma_{ab}$.
+		\bigskip
+		\begin{proof}
+			Let $x\in G$. $\gamma_{ab}(x)=(ab)x(ab)^{-1}=abxb^{-1}a^{-1}$. This is the same as $\gamma_a\gamma_b$, the composition of functions $\gamma_a$ and $\gamma_b$: $\gamma_a\circ \gamma_b(x)=a(bxb^{-1})a^{-1}$.
+		\end{proof}
 	\end{enumerate}
 \end{exercise}
 
