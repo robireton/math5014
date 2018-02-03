@@ -24,9 +24,11 @@
 	\bigskip
 
 	\begin{proof}
-    Let $x\in X$.\\$\alpha(\beta\gamma) = \alpha((\beta\gamma)(x)) = \alpha(\beta(\gamma(x)))$.\\
+    Let $x\in X$. Let $\alpha,\beta,\gamma\in S_X$.\\
 		\\
-    $(\alpha\beta)\gamma = (\alpha\beta)(\gamma(x)) = \alpha(\beta(\gamma(x)))$.
+		$(\alpha(\beta\gamma))(x) = (\alpha(\beta\gamma(x))) = \alpha(\beta(\gamma(x))) = \alpha\beta(\gamma(x)) = ((\alpha\beta)\gamma)(x)$.\\
+		\\
+		Since the values of the functions $\alpha(\beta\gamma)$ and $(\alpha\beta)\gamma$ are the same for all elements in X, the functions are equal.
   \end{proof}
 	\vspace{1in}
 
@@ -34,9 +36,11 @@
 	\bigskip
 
 	\begin{proof}
-		Let $x\in X$.\\$h(gf) = h((gf)(x)) = h(g(f(x)))$. $h(g(f(x)))\in W$.\\
+		Let $x\in X$.\\
 		\\
-		$(hg)f = (hg)(f(x)) = h(g(f(x)))$. $h(g(f(x)))\in W$.
+		$(h(gf))(x) = h(gf(x)) = h(g(f(x))) = hg(f(x)) = ((hg)f)(x)$.\\
+		\\
+		Since the values of the functions $h(gf)$ and $(hg)f$ are the same for all elements in X, the functions are equal.
 	\end{proof}
 \end{exercise}
 
@@ -88,17 +92,15 @@
     \item Prove that if $\alpha$ and $\beta$ are disjoint, then $\forall k\ge0$, $(\alpha\beta)^k=\alpha^k\beta^k$
     \bigskip
 
-		\begin{proof}[Corollary of Lemma from 1.8]
-			If $\alpha:X\to X$ and $\beta:X\to X$ are disjoint permutations of $X$, then if $\beta$ moves $x\in X$, $\alpha$ fixes both $x$ and $\beta(x)$.
-		\end{proof}
-		\bigskip
-
   	\begin{proof}
-			From the definition, when $k=0$, we have $(\alpha\beta)^0 = 1 = 1\circ 1 = \alpha^0\beta^0$. Likewise, when $k=1$, $(\alpha\beta)^1 = \alpha\beta = \alpha^1\beta^1$.\\
+			From the definition, when $k=0$, we have $(\alpha\beta)^0 = 1 = 1\circ 1 = \alpha^0\beta^0$.
+			Likewise, when $k=1$, $(\alpha\beta)^1 = \alpha\beta = \alpha^1\beta^1$.\\
 			\\
-			Now, suppose that $(\alpha\beta)^n = \alpha^n\beta^n$. Then, $(\alpha\beta)((\alpha\beta)^n) = (\alpha\beta)^{n+1} = (\alpha\beta)(\alpha^n\beta^n)$.
-			$\alpha$ and $\beta$ are disjoint, so if $\beta$ moves $\alpha^n\beta^n$ then $\alpha$ fixes it and also $\beta(\alpha^n\beta^n)$ (see corollary).
-			This gives $(\alpha\beta)^{n+1} = \alpha^{n+1}\beta^{n+1}$. A similar argument holds if $\alpha$ moves and $\beta$ fixes.\\
+			Now, suppose that $(\alpha\beta)^n = \alpha^n\beta^n$.
+			Then, $(\alpha\beta)(\alpha\beta)^n = (\alpha\beta)^{n+1} = (\alpha\beta)(\alpha^n\beta^n)$.
+			$\alpha$ and $\beta$ are disjoint, so we know from exercise 1.8 that they commute, allowing us to write
+			$(\alpha\beta)(\alpha^n\beta^n)=\alpha\beta\alpha^n\beta^n=\alpha\alpha^n\beta\beta^n=\alpha^{n+1}\beta^{n+1}$.
+			This gives $(\alpha\beta)^{n+1} = \alpha^{n+1}\beta^{n+1}$.\\
 			\\
 			We know that $(\alpha\beta)^k=\alpha^k\beta^k$ holds for $k=0$ and $k=1$, so, by induction, it must hold for every $k>1$ as well.
   	\end{proof}
