@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage[top=1.0in, bottom=0.75in, left=0.75in, right=2.5in]{geometry}
+\usepackage{fancyhdr, textpos, enumerate, faktor}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{ebgaramond-maths, plex-mono}
+\usepackage[makeroom]{cancel}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{28pt}
+\setlength\headwidth{7in}
+\setlength{\TPHorizModule}{1pt}
+\setlength{\TPVertModule}{1pt}
+\lhead{\textsc{group theory\\spring 2018}}
+\rhead{\textsc{homework bundle \#4\\page \thepage}}
+\chead{\textsc{rob\\ireton}}
+
+\newcommand{\zee}{\mathbb{Z}}
+\newcommand{\normal}{\vartriangleleft}
+
+\newenvironment{exercise}[2]{\begin{textblock}{32}[1,0](0,#2)\noindent#1\end{textblock}}{\vspace{1in}}
+
+\begin{document}
+
+\begin{exercise}{2.26}{6}
+	{\noindent}Let $\{S_i;\; i\in I\}$ be a family of subgroups of a group $G$, let $\{S_it_i;\; i\in I\}$ be a family of right cosets, and let $D=\bigcap_{i\in I}S_i$.  Prove that either $\bigcap_{i\in I}S_it_i=\emptyset$ or $\bigcap_{i\in I}S_it_i=Dg$ for some $g\in G$.
+\end{exercise}
+
+\begin{exercise}{2.30}{6}
+	{\noindent}If $S\le G$ and ${g:S}=2$, then $S\normal G$.
+\end{exercise}
+
+\begin{exercise}{2.36}{6}{\noindent}Prove that $A_n\normal S_n$ for every $n\ge 2$.
+\end{exercise}
+
+\begin{exercise}{2.23}{6}
+	{\noindent}If $gcd(r,s)=1$, then $s^{\varphi(r)}\equiv 1 \mod r$.
+\end{exercise}
+
+\begin{exercise}{2.40}{6}
+	{\noindent}Let $H\normal G$, let $v:G\to \faktor GH$ be the natural map, and let $X\subset G$ be a subset such that $v(X)$ generates $\faktor GH$. Prove that $G=\langle H\cup X\rangle.$
+\end{exercise}
+
+\begin{exercise}{2.41}{6}
+	{\noindent}Let $G$ be a finite group of odd order, and let $x$ be the product of all the elements of $G$ (in some order). Prove that $x\in G'$.
+\end{exercise}
+
+\end{document}
