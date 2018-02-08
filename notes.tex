@@ -315,9 +315,6 @@
 	If $p$ is a prime and $a$ is an integer, then $a^p\equiv a\mod p$.
 \end{corollary}
 
-\begin{notation}
-	The multiplicative group of elements of $\mathbb{Z}_n$ is denoted by $G = U(\mathbb{Z}_n)$. $G$ is a group of order $n-1$.
-\end{notation}
 
 \section{Cyclic Groups}
 
@@ -355,7 +352,7 @@
 \end{theorem}
 
 
-\section{Cyclic Groups}
+\section{Normal Subgroups}
 
 \begin{definition}
 	If $S$ and $T$ are nonempty subsets of a group $G$, then \[ ST=\{st:s\in S\text{ and }T\in T\}.\]\par
@@ -372,6 +369,13 @@
 \begin{definition}
 	A subgroup $K\leq G$ is a \term{normal subgroup}, denoted by $K\vartriangleleft G$, if $gKg^{-1}=K$ for every $g\in G$.
 \end{definition}
+
+\begin{remark}
+	A subgroup $K$ of $G$ is normal in $G$ if and only if $Kg = gK$ for every $g\in G$,
+	for associativity of the multiplication of nonempty subsets gives $K = (Kg)g^{-1} = gKg^{-1}$.
+
+\end{remark}
+
 
 \begin{definition}
 	If $x\in G$, then a \term{conjugate} of $x$ in $G$ is an element of the form $axa^{-1}$ for some $a\in G$;
@@ -399,7 +403,7 @@
 \end{theorem}
 
 
-\section{Quotient Groups}
+\section{The Isomorphism Theorems}
 
 \begin{theorem}[First Isomorphism Theorem]
 	Let $f:G\to H$ be a homomorphism with kernel $K$. Then $K$ is a normal subgroup of $G$ and $\faktor{G}{K}\cong \mathrm{im}\;f$.

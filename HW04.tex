@@ -1,9 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage[top=1.0in, bottom=0.75in, left=0.75in, right=2.5in]{geometry}
-\usepackage{fancyhdr, textpos, enumerate, faktor}
+\usepackage{fancyhdr, textpos, faktor}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{ebgaramond-maths, plex-mono}
-\usepackage[makeroom]{cancel}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -22,27 +21,66 @@
 
 \begin{document}
 
+\begin{exercise}{2.23}{6}
+	{\noindent}If $\gcd(r,s)=1$, then $s^{\varphi(r)}\equiv 1 \mod r$.
+	[\textit{Hint}. The order of the group of units $U(\zee_n)$ is $\varphi(n)$.]
+	\bigskip
+
+	$r$ and $s$ are relatively prime.\\
+	$\varphi(r)$ is the number of positive integers that are relatively prime to $r$.\\
+	Need to show that $r$ divides $s^{\varphi(r)}-1$.\\
+	\dots
+\end{exercise}
+
 \begin{exercise}{2.26}{6}
 	{\noindent}Let $\{S_i;\; i\in I\}$ be a family of subgroups of a group $G$, let $\{S_it_i;\; i\in I\}$ be a family of right cosets, and let $D=\bigcap_{i\in I}S_i$.  Prove that either $\bigcap_{i\in I}S_it_i=\emptyset$ or $\bigcap_{i\in I}S_it_i=Dg$ for some $g\in G$.
+	\bigskip
+
+	\dots
 \end{exercise}
 
 \begin{exercise}{2.30}{6}
 	{\noindent}If $S\le G$ and $[G:S]=2$, then $S\normal G$.
+	\bigskip
+
+	There are two right cosets of $S$ in $G$: $\{Sg_1, Sg_2\}$, with $g_1, g_2$ representatives of their respective right cosets.\\
+	For $S\vartriangleleft G$ to be true, $\forall s\in S, \forall g\in G, gsg^{-1}\in S$.\\
+	\dots
+
 \end{exercise}
 
-\begin{exercise}{2.36}{6}{\noindent}Prove that $A_n\normal S_n$ for every $n\ge 2$.
+\begin{exercise}{2.36}{6}
+	{\noindent}Prove that $A_n\normal S_n$ for every $n\ge 2$.
+	\bigskip
+
+	$A_n$, the set of all even permutations in $S_n$ is a group with order $n!/2$. (exercise 2.1)\\
+	Any particular $S_n$ is finite, so $|G|/|S|=[G:S]=2$ (Lagrange).\\
+	$[G:S]=2$, so this should follow, more or less, from exercise 2.30, which I haven't managed to prove, yet.\\
+	\dots
 \end{exercise}
 
-\begin{exercise}{2.23}{6}
-	{\noindent}If $\gcd(r,s)=1$, then $s^{\varphi(r)}\equiv 1 \mod r$.
-\end{exercise}
+\newpage
 
 \begin{exercise}{2.40}{6}
-	{\noindent}Let $H\normal G$, let $v:G\to \faktor GH$ be the natural map, and let $X\subset G$ be a subset such that $v(X)$ generates $\faktor GH$. Prove that $G=\langle H\cup X\rangle.$
+	{\noindent}Let $H\normal G$, let $v:G\to \faktor{G}{H}$ be the natural map, and let $X\subset G$ be a subset such that $v(X)$ generates $\faktor{G}{H}$. Prove that $G=\langle H\cup X\rangle$.
+	\bigskip
+
+	$\forall h\in H, \forall g\in G, ghg^{-1}\in H$.\\
+	$\nu: g\mapsto Hg$.\\
+	$\faktor{G}{H}=\langle\nu(X)\rangle=\langle HX\rangle$\\
+	\dots
 \end{exercise}
 
 \begin{exercise}{2.41}{6}
 	{\noindent}Let $G$ be a finite group of odd order, and let $x$ be the product of all the elements of $G$ (in some order). Prove that $x\in G'$.
+	\bigskip
+
+	$G=\{e, g_1, g_2, \dots, g_n\}$\\
+	$|G|$ is odd, so $n$ is even, so non-identity elements of $G$ can be `paired up' if needed.\\
+	Maybe those `pairs' are elements and their inverses?\\
+	$x=product(shuffle(elements(G)))$. $G$ is closed so $x\in G$.\\
+	$G'=\langle\{aba^{-1}b^{-1}: a,b\in G\}\rangle$.\\
+	\dots
 \end{exercise}
 
 \end{document}
