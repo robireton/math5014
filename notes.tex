@@ -1,4 +1,4 @@
-\documentclass[10pt]{report}
+\documentclass[12pt]{report}
 \usepackage[top=0.75in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{amsmath, amssymb, amsthm, faktor}
 \usepackage{mathspec} %loads fontspec as well
@@ -421,5 +421,22 @@
 	Let $K\leq H\leq G$, where both $K$ and $H$ are subgroups of $G$. Then $\faktor{H}{K}$ is a normal subgroup of $\faktor{G}{K}$ and
 	\[ \faktor{\left(\faktor{G}{K}\right)}{\left(\faktor{H}{K}\right)}\cong\faktor{G}{H}. \]
 \end{theorem}
+
+
+
+\section{The Correspondence Theorem}
+
+\begin{theorem}[Correspondence Theorem]
+	Let $K\vartriangleleft G$ and let $\nu:G\mapsto\faktor{G}{K}$ be the natural map.
+	Then $S\mapsto\nu(S)=\faktor{S}{K}$ is a bijection from the family of all those subgroups $S$ of $G$ which contain $K$
+	to the family of all the subgroups of $\faktor{G}{K}$.
+	\par
+	Moreover, if we denote $\faktor{S}{K}$ by $S^\ast$, then:
+	\begin{enumerate}
+		\item $T\leq S$ if and only if $T^\ast\leq S^\ast$, and then $[S:T]=[S^\ast:T^\ast]$; and
+		\item $T\vartriangleleft S$ if and only if $T^\ast\vartriangleleft S^\ast$, and then $\faktor{S}{T}\cong\faktor{S^\ast}{T^\ast}$.
+	\end{enumerate}
+\end{theorem}
+
 
 \end{document}
