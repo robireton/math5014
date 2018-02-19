@@ -438,5 +438,29 @@
 	\end{enumerate}
 \end{theorem}
 
+\begin{definition}
+	A group $G\neq1$ is \term{simple} if it has no normal subgroups other than $G$ and $1$.
+\end{definition}
 
+
+
+\section{Direct Products}
+
+\begin{definition}
+	If $H$ and $K$ are groups, then their \term{direct product}, denoted by $H\times K$, is the group with elements all
+	ordered pairs $(h, k)$, where $h\in H$ and $k\in K$, and with operation $(h, k)(h', k')=(hh', kk')$.
+\end{definition}
+
+\begin{theorem}
+	Let $G$ be a group with normal subgroups $H$ and $K$. If $HK=G$ and $H\cap K=1$, then $G\cong H\times K$.
+\end{theorem}
+
+\begin{theorem}
+	If $A\vartriangleleft H$ and $B\vartriangleleft K$ then $A\times B\vartriangleleft H\times K$ and
+	$\faktor{H\times K}{A\times B}\cong\faktor{H}{A}\times\faktor{K}{B}$.
+\end{theorem}
+
+\begin{corollary}
+	If $G=H\times K$, then $\faktor{G}{H\times1}\cong K$.
+\end{corollary}
 \end{document}
