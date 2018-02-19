@@ -463,4 +463,43 @@
 \begin{corollary}
 	If $G=H\times K$, then $\faktor{G}{H\times1}\cong K$.
 \end{corollary}
+
+
+\chapter{Symmetric Groups and \textit{G}-Sets}
+
+\section{Conjugates}
+\begin{lemma}
+	If $G$ is a group, then the relation “y is a \term{conjugate} of $x$ in $G$,” that is, $y=gxg^{-1}$ for some $g\in G$, is an equivalence relation.
+\end{lemma}
+
+\begin{definition}
+	If $G$ is a group, then the equivalence class of $a\in G$ under the relation “y is a conjugate of $x$ in $G$” is called the \term{conjugacy class} of $a$; it is denoted by $a^G$.
+\end{definition}
+
+\begin{definition}
+	The \term{center} of a group $G$, denoted by $Z(G)$, is the set of all $a\in G$ at commute with every element of $G$.
+\end{definition}
+
+\begin{definition}
+	If $a\in G$, then the \term{centralizer} of $a$ in $G$, denoted by $C_G(a)$, is the set of all $x\in G$ which commute with $a$.
+\end{definition}
+
+\begin{theorem}
+	If $a\in G$, the number of conjugates of $a$ is equal to the index of its centralizer:\
+	$|a^G|=[G:C_G(a)]$, and this number is a divisor of $|G|$ when $G$ is finite.
+\end{theorem}
+
+\begin{definition}
+	If $H\leq G$ and $g\in G$, then the \term{conjugate} $gHg^{-1}$ is $\{ghg^{-1}:h\in H\}$. The conjugate $gHg^{-1}$ is often denoted by $H^g$.
+\end{definition}
+
+\begin{definition}
+	If $H\leq G$, then the \term{normalizer} of $H$ in $G$, denoted by $N_G(H)$, is
+	\[N_G(H)=\{a\in G:aHa^{-1}=H\}.\]
+\end{definition}
+
+\begin{theorem}
+	If $H\leq G$, then the number $c$ of conjugates of $H$ in $G$ is equal to the index of its normalizer: $c=[G:N_G(H)]$, and $c$ divides $|G|$ when $G$ is finite.
+	Moreover, $aHa^{-1}=bHb^{-1}$ if and only if $b^{-1}a\in N_G(H)$.
+\end{theorem}
 \end{document}
