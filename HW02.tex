@@ -64,20 +64,29 @@
 
 
 \begin{exercise}{1.39}{5}
-	{\noindent}Let $f : X\to Y$ be a bijection between sets $X$ and $Y$. Show that the mapping given by \[\alpha \mapsto f\circ\alpha\circ f^{-1}\] is an isomorphism $S_X\to S_Y$.
+	{\noindent}Let $f : X\to Y$ be a bijection between sets $X$ and $Y$. Show that the mapping given by \[\alpha \mapsto f\circ\alpha\circ f^{-1}\]
+	is an isomorphism $S_X\to S_Y$.
 	\bigskip
 
-	{\noindent}First, some clarification: if $f:X\to Y$, then $f^{-1}:Y\to X$. Based on context, assume $\alpha:X\to X$ is a permutation in $S_X$.
-	That leaves our mapping, let's call it $g:S_X\to S_Y$.\\
+	{\noindent}First, some clarification: if $f:X\to Y$, then $f^{-1}:Y\to X$ is the inverse of $f$ and $ff^{-1}=(1)=f^{-1}f$.
+	Based on context, assume $\alpha:X\to X$ is a permutation in $S_X$. That means that $f\circ\alpha\circ f^{-1}:Y\to Y$ is a
+	permutation in $S_Y$. Let's call our mapping $\varphi:S_X\to S_Y$.\\
 	\\
-	Next, since $\alpha$ is a permutation, it is a bijection. It follows that $g$ is also a bijection, because a composition of bijections is itself a bijection. ({\small{\textit{c.f.} https://goo.gl/QuJkb3}})\\
+	Let $a,b\in S_X$. Then
+	\begin{align*}
+		\varphi(a\circ b) &= f\circ a\circ b\circ f^{-1} \\
+		                  &= f\circ a\circ(1)\circ b\circ f^{-1} \\
+											&= f\circ a\circ f^{-1}\circ f\circ b\circ f^{-1} \\
+											&= (f\circ a\circ f^{-1})\circ(f\circ b\circ f^{-1}) \\
+											&= \varphi(a)\circ\varphi(b)
+	\end{align*}
+	So, $\varphi$ is a homomorphism.\\
 	\\
-	It remains to show that $g$ is a homomorphism.\\
+	Next, since $\alpha$ is a permutation, it is a bijection. It follows that $\varphi$ is also a bijection, because a composition of bijections is
+	itself a bijection. ({\small{\textit{c.f.} https://goo.gl/QuJkb3}})\\
 	\\
-	\dots
 \end{exercise}
 
-\newpage
 
 \begin{exercise}{1.29}{9} %OK
 	{\noindent}Consider $\alpha: \zee_{11}\to \zee_{11}$ given by $\alpha(x)=4x^2-3x^7$.
