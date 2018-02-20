@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage[top=1.0in, bottom=0.75in, left=0.75in, right=2.5in]{geometry}
+\usepackage{fancyhdr, textpos, faktor, enumerate}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{ebgaramond-maths, plex-mono}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{28pt}
+\setlength\headwidth{7in}
+\setlength{\TPHorizModule}{1pt}
+\setlength{\TPVertModule}{1pt}
+\lhead{\textsc{group theory\\spring 2018}}
+\rhead{\textsc{homework bundle \#5\\page \thepage}}
+\chead{\textsc{rob\\ireton}}
+
+\newenvironment{exercise}[2]{\begin{textblock}{32}[1,0](0,#2)\noindent#1\end{textblock}}{\vspace{1in}}
+
+\begin{document}
+
+\begin{exercise}{1.27}{6}
+  \begin{enumerate}[(i.)]
+  	\item Let $G$ be a finite abelian group containing no elements $a\ne e$ with $a^2=e$. Evaluate $a_1*a_2*\dotsb*a_n$ (a list of all the elements of $G$ with no repetitions).
+    \item Prove Wilson's Theorem: If $p$ is prime, then $(p-1)!\equiv -1\mod p$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{1.46}{6}
+  {\noindent}Let $\boldsymbol{T}$ denote the circle group: the multiplicative group of all complex numbers of absolute value 1. For a fixed real number $y$, show that $f_y:\mathbb{R}\to \boldsymbol{T}$, given by $f_y(x)=e^{iyx}$, is a group homomorphism.
+\end{exercise}
+
+\begin{exercise}{2.20}{6}
+	{\noindent}Prove: If $G=\langle a \rangle$ is a cyclic group of order $n$, then $a^x$ is also a generator of $G$ $\iff$ $gcd(n,k)=1$.
+\end{exercise}
+
+\begin{exercise}{2.46}{6}
+	{\noindent}Let $N\vartriangleleft G$ and let $f: G\to H$  be a homomorphism whose kernel contains $N$. Show that $f$ induces a homomorphism $f_*:\faktor GN\to H$ by $f_*(Na)=f(a)$.
+\end{exercise}
+
+\begin{exercise}{2.49}{6}
+	{\noindent}Let $H,K,L$ be subgroups of $G$ with $H\le L$. Prove $HK\cap L=H(K\cap L)$. (We do not assume that either $HK$ or $H(K\cap L)$ is a subgroup.)
+\end{exercise}
+
+\begin{exercise}{2.50}{6}
+	{\noindent}Let $f: G\to G^*$ be a homomorphism and let $S^*\le G^*$. Prove that $f^{-1}(S^*)=\{ x\in G;\; f(x)\in S^*\}$ is a subgroup of $G$ containing $ker\ f$. [NOTE: In this context $f^{-1}$ is used to denote ``preimage'', it is not assumed that $f$ has an inverse.]
+\end{exercise}
+
+\begin{exercise}{2.56}{6}
+	{\noindent}A subgroup $H\le G$ is a maximal normal subgroup of $G$ if there is no normal subgroup of $G$ with $H<N<G$. Prove that $H$ is a maximal normal subgroup of $G$ $\iff$ $\faktor GH $ has no normal subgroups (other than itself and $\{e\}$).
+\end{exercise}
+
+\begin{exercise}{2.58}{6}
+	{\noindent}Let $M$ be a maximal subgroup of $G$. Prove that of $M\vartriangleleft G$, then $[G:M]$ is finite and equal to a prime.
+\end{exercise}
+
+\begin{exercise}{2.69}{6}
+	{\noindent}Let $G$ be a group with normal subgroups $H$ and $K$. Prove that: $HK=G$ and $H\cap  K=\{e\}$ $\iff$ each $a\in G$ has a unique expression of the form $a=hk$ where $h\in H$ and $k\in K$.
+\end{exercise}
+
+\begin{exercise}{2.72}{6}
+	{\noindent}Let $G$ be a group having a simple subgroup $H$ with index 2. Prove that either:
+  \begin{enumerate}[(a.)]
+    \item $H$ is the unique proper normal subgroup of $G$, OR
+	  \item $\exists K\le G$ with $|K|=2$ such that $G=H\times K$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2.74}{6}
+	{\noindent}Prove: The operation of direct product is commutative and associative in the following sense: for groups $H$, $K$, and $L$, $H\times K\cong K\times H$ and $H\times(K\times L)=(H\times K)\times L$.
+\end{exercise}
+
+\end{document}
