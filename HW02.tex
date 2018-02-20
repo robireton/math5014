@@ -63,31 +63,6 @@
 \end{exercise}
 
 
-\begin{exercise}{1.39}{5}
-	{\noindent}Let $f : X\to Y$ be a bijection between sets $X$ and $Y$. Show that the mapping given by \[\alpha \mapsto f\circ\alpha\circ f^{-1}\]
-	is an isomorphism $S_X\to S_Y$.
-	\bigskip
-
-	{\noindent}First, some clarification: if $f:X\to Y$, then $f^{-1}:Y\to X$ is the inverse of $f$ and $ff^{-1}=(1)=f^{-1}f$.
-	Based on context, assume $\alpha:X\to X$ is a permutation in $S_X$. That means that $f\circ\alpha\circ f^{-1}:Y\to Y$ is a
-	permutation in $S_Y$. Let's call our mapping $\varphi:S_X\to S_Y$.\\
-	\\
-	Let $a,b\in S_X$. Then
-	\begin{align*}
-		\varphi(a\circ b) &= f\circ a\circ b\circ f^{-1} \\
-		                  &= f\circ a\circ(1)\circ b\circ f^{-1} \\
-											&= f\circ a\circ f^{-1}\circ f\circ b\circ f^{-1} \\
-											&= (f\circ a\circ f^{-1})\circ(f\circ b\circ f^{-1}) \\
-											&= \varphi(a)\circ\varphi(b)
-	\end{align*}
-	So, $\varphi$ is a homomorphism.\\
-	\\
-	Next, since $\alpha$ is a permutation, it is a bijection. It follows that $\varphi$ is also a bijection, because a composition of bijections is
-	itself a bijection. ({\small{\textit{c.f.} https://goo.gl/QuJkb3}})\\
-	\\
-\end{exercise}
-
-
 \begin{exercise}{1.29}{9} %OK
 	{\noindent}Consider $\alpha: \zee_{11}\to \zee_{11}$ given by $\alpha(x)=4x^2-3x^7$.
 	\begin{itemize}
@@ -126,7 +101,6 @@
 	\end{itemize}
 \end{exercise}
 
-\newpage
 
 \begin{exercise}{1.36}{3.5}
 	{\noindent}Prove that the following four permutations form a group, denoted $\mathbf{V}$, called the \\(Klein) Four-group.
@@ -159,5 +133,39 @@
 	\end{proof}
 \end{exercise}
 
+\begin{exercise}{1.39}{5}
+	{\noindent}Let $f : X\to Y$ be a bijection between sets $X$ and $Y$. Show that the mapping given by \[\alpha \mapsto f\circ\alpha\circ f^{-1}\]
+	is an isomorphism $S_X\to S_Y$.
+	\bigskip
+
+	{\noindent}First, some clarification: if $f:X\to Y$, then $f^{-1}:Y\to X$ is the inverse of $f$ and $ff^{-1}=(1)=f^{-1}f$.
+	Based on context, assume $\alpha:X\to X$ is a permutation in $S_X$. That means that $f\circ\alpha\circ f^{-1}:Y\to Y$ is a
+	permutation in $S_Y$. Let's call our mapping $\varphi:S_X\to S_Y$.
+
+	\begin{proof}
+		Let $\alpha,\beta\in S_X$. Then
+		\begin{align*}
+			\varphi(\alpha\circ\beta) &= f\circ\alpha\circ\beta\circ f^{-1} \\
+												&= f\circ\alpha\circ(1)\circ\beta\circ f^{-1} \\
+												&= f\circ\alpha\circ f^{-1}\circ f\circ\beta\circ f^{-1} \\
+												&= (f\circ\alpha\circ f^{-1})\circ(f\circ\beta\circ f^{-1}) \\
+												&= \varphi(\alpha)\circ\varphi(\beta)
+		\end{align*}
+		So, $\varphi$ is a homomorphism.\\
+		\\
+		% Next, since $\alpha$ is a permutation, it is a bijection. It follows that $\varphi$ is also a bijection, because a composition of bijections is
+		% itself a bijection. ({\small{\textit{c.f.} https://goo.gl/QuJkb3}})\\
+		% \\
+		Suppose $\varphi(\alpha)=\varphi(\beta)$. Then $f\circ\alpha\circ f^{-1}=f\circ\beta\circ f^{-1}$. Multiplying both sides on
+		the left by $f^{-1}$ and on the right by $f$ gives $(1)\circ\alpha\circ(1)=(1)\circ\beta\circ(1)$, or $\alpha=\beta$. That is,
+		$\varphi(\alpha)=\varphi(\beta)\implies\alpha=\beta$, so $\varphi$ is injective.\\
+		\\
+		Now, Let $\gamma$ be a permutation in $S_Y$. Then $f\circ (f^{-1}\circ\gamma\circ f)\circ f^{-1}$ is also a permutation in $S_Y$.
+		Call $f^{-1}\circ\gamma\circ f$, which is a permutation in $S_X$, $\gamma'$. So, there exists a permutation in $S_X$ such that
+		$\varphi$ of that element equals $\gamma$, namely, $\gamma'$. So, $\varphi$ is also surjective.\\
+		\\
+		Since $\varphi$ is a bijective homomorphism, it is an isomorphism.
+	\end{proof}
+	\end{exercise}
 
 \end{document}
