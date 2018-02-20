@@ -373,9 +373,7 @@
 \begin{remark}
 	A subgroup $K$ of $G$ is normal in $G$ if and only if $Kg = gK$ for every $g\in G$,
 	for associativity of the multiplication of nonempty subsets gives $K = (Kg)g^{-1} = gKg^{-1}$.
-
 \end{remark}
-
 
 \begin{definition}
 	If $x\in G$, then a \term{conjugate} of $x$ in $G$ is an element of the form $axa^{-1}$ for some $a\in G$;
@@ -502,4 +500,33 @@
 	If $H\leq G$, then the number $c$ of conjugates of $H$ in $G$ is equal to the index of its normalizer: $c=[G:N_G(H)]$, and $c$ divides $|G|$ when $G$ is finite.
 	Moreover, $aHa^{-1}=bHb^{-1}$ if and only if $b^{-1}a\in N_G(H)$.
 \end{theorem}
+
+\section{Symmetric Groups}
+
+\begin{definition}
+	Two permutations $\alpha,\beta\in S_n$ have the \term{same cycle structure} if their complete factorizations into disjoint
+	cycles have the same number of $r$-cycles for each $r$.
+\end{definition}
+
+\begin{lemma}
+	If $\alpha,\beta\in S_n$, then $\alpha\beta\alpha^{-1}$ is the permutation with the same cycle structure as $\beta$ which is
+	obtained by applying $\alpha$ to the symbols in $\beta$.
+\end{lemma}
+
+\begin{theorem}
+	Permutations $\alpha,\beta\in S_n$ are conjugate if and only if they have the same cycle structure.
+\end{theorem}
+
+\begin{corollary}
+	A subgroup $H$ of $S_n$ is a normal subgroup if and only if, whenever $\alpha\in H$, then every $\beta$ having the same
+	cycle structure as $\alpha$ also lies in $H$.
+\end{corollary}
+
+\begin{theorem}
+	$A_4$ is a group of order 12 having no subgroup of order 6.
+\end{theorem}
+
+\begin{definition}
+	If $n$ is a positive integer, then a \term{partition of n} is a sequence of integers $1\leq i_1\leq i_2\leq\cdots\leq i_r$ with $\sum i_j = n$.
+\end{definition}
 \end{document}
