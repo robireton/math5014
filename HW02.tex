@@ -27,7 +27,7 @@
 %
 % \end{exercise}
 
-\begin{exercise}{1.18}{6.2}
+\begin{exercise}{1.18}{6.2} %OK
 	{\noindent}Give an example of $\alpha, \beta, \gamma\in S_5$ such that:
 	\begin{itemize}
 		\item $\alpha$ commutes with $\beta$
@@ -41,6 +41,7 @@
 	$\alpha = (1\enspace2)$;\quad $\beta = (3\enspace4)$;\quad $\gamma = (1\enspace5)$.
 \end{exercise}
 
+
 % \begin{exercise}{1.21}{6.2}
 %   {\noindent}Show that $S_n$ has the same number of even permutations as odd permutations.
 % 	[Hint: If $\tau$ is a transposition, consider the function $f : S_n\to S_n$ given by $f(\alpha)=\tau\alpha$.]
@@ -49,7 +50,7 @@
 % \end{exercise}
 
 
-\begin{exercise}{1.26}{3.5}
+\begin{exercise}{1.26}{3.5} %OK
 	{\noindent}Prove: a group $G$ in which $\forall x\in G$, $x^2=e$ must be abelian.
 	\bigskip
 
@@ -60,6 +61,7 @@
 		\forall a, b \in G$, G is, by definition, abelian.
 	\end{proof}
 \end{exercise}
+
 
 \begin{exercise}{1.39}{5}
 	{\noindent}Let $f : X\to Y$ be a bijection between sets $X$ and $Y$. Show that the mapping given by \[\alpha \mapsto f\circ\alpha\circ f^{-1}\] is an isomorphism $S_X\to S_Y$.
@@ -77,7 +79,7 @@
 
 \newpage
 
-\begin{exercise}{1.29}{9}
+\begin{exercise}{1.29}{9} %OK
 	{\noindent}Consider $\alpha: \zee_{11}\to \zee_{11}$ given by $\alpha(x)=4x^2-3x^7$.
 	\begin{itemize}
 		\item Show that $\alpha$ is a permutation of $\zee_{11}$ and write it as a product of disjoint cycles.
@@ -123,29 +125,28 @@
 	\bigskip
 
 	\begin{proof}
-		Let $e = (1),\quad\alpha=(1\enspace2)(3\enspace4),\quad\beta=(1\enspace3)(2\enspace4),\quad\gamma=(1\enspace4)(2\enspace3)$.
-		Let $\mathbf{V} = \{e, \alpha, \beta, \gamma\}$. The `multiplication' table for $\mathbf{V}$ is given by:
+		The `multiplication' table for $\mathbf{V}$ is given by:
 		\bigskip
 
-		\setlength{\tabcolsep}{2em} % for the horizontal padding
+		\setlength{\tabcolsep}{1em} % for the horizontal padding
 		\renewcommand{\arraystretch}{1.25}% for the vertical padding
 		\begin{tabular}{r|rrrr}
-			$\circ$        & $e$      & $\alpha$ & $\beta$  & $\gamma$ \\ \hline
-			$e$            & $e$      & $\alpha$ & $\beta$  & $\gamma$ \\
-			$\alpha$       & $\alpha$ & $e$      & $\gamma$ & $\beta$  \\
-			$\beta$        & $\beta$  & $\gamma$ & $e$      & $\alpha$ \\
-			$\gamma$       & $\gamma$ & $\beta$  & $\alpha$ & $e$      \\
+			$\circ$                    & $(1)$                      & $(1\enspace2)(3\enspace4)$ & $(1\enspace3)(2\enspace4)$ & $(1\enspace4)(2\enspace3)$ \\ \hline
+			$(1)$                      & $(1)$                      & $(1\enspace2)(3\enspace4)$ & $(1\enspace3)(2\enspace4)$ & $(1\enspace4)(2\enspace3)$ \\
+			$(1\enspace2)(3\enspace4)$ & $(1\enspace2)(3\enspace4)$ & $(1)$                      & $(1\enspace4)(2\enspace3)$ & $(1\enspace3)(2\enspace4)$ \\
+			$(1\enspace3)(2\enspace4)$ & $(1\enspace3)(2\enspace4)$ & $(1\enspace4)(2\enspace3)$ & $(1)$                      & $(1\enspace2)(3\enspace4)$ \\
+			$(1\enspace4)(2\enspace3)$ & $(1\enspace4)(2\enspace3)$ & $(1\enspace3)(2\enspace4)$ & $(1\enspace2)(3\enspace4)$ & $(1)$                      \\
 		\end{tabular} \\
 	\bigskip
 
-	We can verify by inspection that:
+	{\noindent}Notice that each element of $\mathbf{V}$ is also an element of $S_4$. We proved in Exercise 1.3 that function composition, when applied to elements of $S_X$, is associative.
+	We can then verify by inspection that:
 	\begin{itemize}
 		\item $\forall a,b\in\mathbf{V}$, $ab \in \mathbf{V}$
-		\item $\forall a,b,c\in\mathbf{V}$, $(ab)c=a(bc)$
 		\item $\forall a\in\mathbf{V}$, $ea=a=ae$ \quad[where $e$ is the element $(1)$]
 		\item $\forall a\in\mathbf{V}$, $\exists b\in\mathbf{V}$ s.t. $ab=e=ba$ \quad[Specifically, $b=a$; \textsc{iow}, every element of $\mathbf{V}$ is its own inverse.]
 	\end{itemize}
-	Since set $\mathbf{V}$ with function composition as an operator has these properties, it is a group.
+	Since set $\mathbf{V}$ with function composition as an operator is closed, associative, has an identity, and has inverses, it is a group.
 	\end{proof}
 \end{exercise}
 
