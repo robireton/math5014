@@ -1,5 +1,6 @@
 ## Local
 .DS_Store
+clean.sh
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
