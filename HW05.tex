@@ -27,10 +27,15 @@
 
 \begin{exercise}{1.46}{6}
   {\noindent}Let $\boldsymbol{T}$ denote the circle group: the multiplicative group of all complex numbers of absolute value 1. For a fixed real number $y$, show that $f_y:\mathbb{R}\to \boldsymbol{T}$, given by $f_y(x)=e^{iyx}$, is a group homomorphism.
+
+  \begin{proof}
+    Let $a,b\in\mathbb{R}$. Then $f_y(a+b)=e^{iy(a+b)}=e^{iya}e^{iyb}=f_y(a)f_y(b)$.\\
+    Therefore, $f_y$ is a group homomorphism.
+  \end{proof}
 \end{exercise}
 
 \begin{exercise}{2.20}{6}
-	{\noindent}Prove: If $G=\langle a \rangle$ is a cyclic group of order $n$, then $a^x$ is also a generator of $G$ $\iff$ $gcd(n,k)=1$.
+	{\noindent}Prove: If $G=\langle a \rangle$ is a cyclic group of order $n$, then $a^k$ is also a generator of $G$ $\iff$ $gcd(n,k)=1$.
 \end{exercise}
 
 \begin{exercise}{2.46}{6}
@@ -67,6 +72,22 @@
 
 \begin{exercise}{2.74}{6}
 	{\noindent}Prove: The operation of direct product is commutative and associative in the following sense: for groups $H$, $K$, and $L$, $H\times K\cong K\times H$ and $H\times(K\times L)=(H\times K)\times L$.
+
+  \begin{proof}
+    Let $\varphi:H\times K\to K\times H$ by $\varphi((h,k)) = (k,h)$; $h,h'\in H$; $k,k'\in K$.
+    $\varphi((h,k)(h',k')) = \varphi((hh',kk')) = (kk',hh') = (k,h)(k',h') = \varphi((h,k))\varphi((h',k'))$. Therefore, $\varphi$ is a homomorphism.
+    Next, suppose that $\varphi((h,k))=\varphi((h',k'))$. Then $(k,h)=(k',h')$, $k=k'$ and $h=h'$, so $(h,k)=(h',k')$, meaning that $\varphi$ is injective.
+    Now let $(k,h)$ be an element of $K\times H$. Then there exists an element: $(h,k)$, which is in $H\times K$ and $\varphi((h,k))=(k,h)$. So $\varphi$ is surjective, too.
+    Since there is a bijective homomorphism between $H\times K$ and $K\times H$, we can say that $H\times K\cong K\times H$.\\
+    \\
+    \textit{The book asks for a proof that $H\times(K\times L)\cong(H\times K)\times L$, that is, isomorphic instead of equal, as is specified here. I'm going to discuss `equal' below, but let us know if you meant `isomorphic'.}\\
+    \\
+    Arguably, the most natural way to interpret both $H\times(K\times L)$ and $(H\times K)\times L$ is as specifying an
+    ordered triplet with elements of the form $(h,k,l)$ where $h\in H$, $k\in K$, and $l\in L$. This is a group for reasons
+    similar to why an external direct product is a group. The operation is $(h,k,l)(h',k',l')=(hh',kk',ll')$, the identity is
+    $(1,1,1)$, and the inverse of $(h,k,l)$ is $(h^{-1},k^{-1},l^{-1})$. $H\times(K\times L)$ and $(H\times K)\times L$ specify
+    the same group of ordered triplets, so they are equal.
+  \end{proof}
 \end{exercise}
 
 \end{document}
