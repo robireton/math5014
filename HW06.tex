@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage[top=1.0in, bottom=0.75in, left=0.75in, right=2.5in]{geometry}
+\usepackage{fancyhdr, textpos, faktor, enumerate}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{ebgaramond-maths, plex-mono}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{28pt}
+\setlength\headwidth{7in}
+\setlength{\TPHorizModule}{1pt}
+\setlength{\TPVertModule}{1pt}
+\lhead{\textsc{group theory\\spring 2018}}
+\rhead{\textsc{homework bundle \#6\\page \thepage}}
+\chead{\textsc{rob\\ireton}}
+
+\newenvironment{exercise}[2]{\begin{textblock}{32}[1,0](0,#2)\noindent#1\end{textblock}}{\vspace{1in}}
+
+\begin{document}
+  \begin{exercise}{3.3}{6}
+    {\noindent}Prove that if $G$ is not abelian, then $\faktor{G}{Z(G)}$ is not cyclic.
+  \end{exercise}
+
+  \begin{exercise}{3.5}{6}
+    {\noindent}Prove that $Z(G_1\times\dotsb\times G_n)=Z(G_1)\times\dotsb\times Z(G_n)$.
+  \end{exercise}
+
+  \begin{exercise}{3.6\,i}{6}
+    {\noindent}Prove that $\forall a,x\in G$, $C_G(axa^{-1})=aC_G(x)a^{-1}$.
+  \end{exercise}
+
+  \begin{exercise}{3.1}{6}
+    {\noindent}A group $G$ is centerless if $Z(G)=\{e\}$. Prove that $S_n$ is centerless if $n\ge 3$.
+  \end{exercise}
+
+  \begin{exercise}{3.14\,i}{6}
+    {\noindent}Prove that if the conjugacy class of $x\in G$ is $\{a_1,\dotsc,a_k\}$, then the conjugacy class of $x^{-1}$ is $\{a_1^{-1},a_2^{-1},\dotsc, a_k^{-1}\}$.
+  \end{exercise}
+
+  \begin{exercise}{3.16}{6}
+    {\noindent}Show that the number of conjugacy classes in $S_n$ is the number of partitions of $n$.
+  \end{exercise}
+
+  \begin{exercise}{3.20}{6}
+    {\noindent}Show that $A_5$, a group of order 60, has no subgroup of order 30.
+  \end{exercise}
+
+  \begin{exercise}{3.9\,i}{6}
+    {\noindent}Prove that $N_G(aHa^{-1})=aN_G(H)a^{-1}$.
+  \end{exercise}
+
+  \begin{exercise}{3.9\,ii}{6}
+    {\noindent}If $H\le K\le G$< prove that $N_K(H)=N_G(H)\cap K$.
+  \end{exercise}
+
+  \begin{exercise}{3.26\,i}{6}
+    {\noindent}If $\rho$ is the representation of a group $G$ on the cosets of a subgroup $H$, then $\ker \rho=\displaystyle\bigcap_{x\in G}xHx^{-1}$.
+  \end{exercise}
+
+  \begin{exercise}{3.26\,ii}{6}
+    {\noindent}If $\psi$ is the representation of a group $G$ on the conjugates of a subgroup  $H$, then $\ker \psi=\displaystyle\bigcap_{x\in G}xN_G(H)x^{-1}$.
+  \end{exercise}
+
+  \begin{exercise}{3.27}{6}
+    {\noindent}The right regular representation of a group $G$ is the function $R:\, G\to S_G$ defined by $a\mapsto R_a$, where $R_a(x)=xa^{-1}$. Show that $R$ is an injective homomorphism.
+    [\textit{Note: in class we discussed the LEFT regular representation, this problem is about the RIGHT representation.}]
+  \end{exercise}
+\end{document}
