@@ -529,4 +529,101 @@
 \begin{definition}
 	If $n$ is a positive integer, then a \term{partition of n} is a sequence of integers $1\leq i_1\leq i_2\leq\cdots\leq i_r$ with $\sum i_j = n$.
 \end{definition}
+
+\section{The Simplicity of $A_n$}
+
+\begin{lemma}
+	$A_5$ is simple.
+\end{lemma}
+
+\begin{lemma}
+	Let $H\vartriangleleft A_n$, where $n\geq 5$. If $H$ contains a 3-cycle, then $H = A_n$.
+\end{lemma}
+
+\begin{lemma}
+	$A_6$ is simple.
+\end{lemma}
+
+\begin{theorem}
+	$A_n$ is simple for all $n\geq 5$.
+\end{theorem}
+
+\section{Some Representation Theorems}
+\begin{theorem}[Cayley, 1878]
+	Every group $G$ can be imbedded as a subgroup of $S_G$. In particular, if $|G|=n$, then $G$ can be imbedded in $S_n$.
+\end{theorem}
+
+\begin{definition}
+	The homomorphism $L:G\to S_G$, given by $a\mapsto L_a$, is called the \term{left regular representation} of $G$.
+\end{definition}
+
+\begin{corollary}
+	If $k$ is a field and $G$ is a finite group of order $n$, then $G$ can be imbedded in $\mathrm{GL}(n,k)$.
+\end{corollary}
+
+\begin{theorem}
+	If $H\leq G$ and $[G:H]=n$, then there is a homomorphism $\rho:G\to S_n$ with $\mathrm{ker}\,\rho\leq H$.
+\end{theorem}
+
+\begin{definition}
+	The homomorphism $\rho$ in Theorem 3.14 is called the \term{representation of G on the cosets of H}.
+\end{definition}
+
+\begin{corollary}
+	An simple group $G$ which contains a subgroup $H$ of index $n$ can be imbedded in $S_n$.
+\end{corollary}
+
+\begin{corollary}
+	An infinite simple group $G$ has no proper subgroups of finite index.
+\end{corollary}
+
+\begin{theorem}
+	Let $H\leq G$ and let $X$ be the family of all the conjugates of $H$ in $G$. There is a homomorphism $\psi:G\to S_X$ with $\mathrm{ker}\,\psi\leq N_G(H)$.
+\end{theorem}
+
+\begin{definition}
+	The homomorphism $\psi$ of Theorem 3.17 is called the \term{representation of G on the conjugates of H}.
+\end{definition}
+
+\section{\textit{G}-Sets}
+\begin{definition}
+	If $X$ is a set and $G$ is a group, then $X$ is a \term{G-set} if there is a function $\alpha:G\times X\to X$ (called an \term{action}), denoted by $\alpha:(g,x)\mapsto gx$, such that:
+	\begin{enumerate}
+		\item $1x=x$ for all $x\in X$; and
+		\item $g(hx) = (gh)x$ for all $g,h\in G$ and $x\in X$.
+	\end{enumerate}
+	One also says that $G$ \term{acts} on $X$. If $|X|=n$, then $n$ is called the \term{degree} of the \textit{G}-set $X$.
+\end{definition}
+
+\begin{theorem}
+	If $X$ is a G-set with action $\alpha$, then there is a homomorphism $\tilde{\alpha}:G\to S_X$ given by $\tilde{\alpha}(g):x\mapsto gx=\alpha(g,x)$. Conversely, every homomorphism $\varphi:G\to S_X$ defines an action, namely, $gx=\varphi(g)x$, which makes $X$ into a G-set.
+\end{theorem}
+
+\begin{definition}
+	If $X$ is a \textit{G}-set and $x\in X$, then the \term{G-orbit} of $x$ is $\mathcal{O}(x)=\{gx:g\in G\}\subset X$.
+\end{definition}
+
+\begin{definition}
+	If $X$ is a \textit{G}-set and $x\in X$, then the \term{stabilizer} of $x$, denoted by $G_x$, is the subgroup $G_x=\{g\in G:gx=x\}\leq G$.
+\end{definition}
+
+\begin{theorem}
+	If $X$ is a \textit{G}-set and $x\in X$, then $|\mathcal{O}(x)|=[G:G_x]$.
+\end{theorem}
+
+\begin{corollary}
+	If a finite group $G$ acts on a set $X$, then the number of elements in any orbit is a divisor of $|G|$.
+\end{corollary}
+
+\begin{corollary}
+	\quad
+	\begin{enumerate}
+		\item If $G$ is a finite group and $x\in G$, then the number of conjugates of $x$ in $G$ is $[G:C_G(x)]$.
+		\item If $G$ is a finite group and $H\leq G$, then the number of conjugates of $H$ in $G$ is $[G:N_G(H)]$.
+	\end{enumerate}
+\end{corollary}
+
+\begin{definition}
+	A \textit{G}-set $X$ is \term{transitive} if it has only one orbit; that is, for every $x,y\in X$, there exists $\sigma\in G$ with $y=\sigma x$.
+\end{definition}
 \end{document}
