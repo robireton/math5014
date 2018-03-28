@@ -437,7 +437,7 @@
 \end{theorem}
 
 \begin{definition}
-	A group $G\neq1$ is \term{simple} if it has no normal subgroups other than $G$ and $1$.
+	A group $G\neq 1$ is \term{simple} if it has no normal subgroups other than $G$ and $1$.
 \end{definition}
 
 
@@ -459,7 +459,7 @@
 \end{theorem}
 
 \begin{corollary}
-	If $G=H\times K$, then $\faktor{G}{H\times1}\cong K$.
+	If $G=H\times K$, then $\faktor{G}{H\times 1}\cong K$.
 \end{corollary}
 
 
@@ -625,5 +625,119 @@
 
 \begin{definition}
 	A \textit{G}-set $X$ is \term{transitive} if it has only one orbit; that is, for every $x,y\in X$, there exists $\sigma\in G$ with $y=\sigma x$.
+\end{definition}
+
+\section{Some Geometry}
+\begin{definition}
+	The \term{dihedral group} $D_{2n}$, for $2n\geq 4$, is a group of order $2n$ which is genrerated by two elements $s$ and $t$ such that $s_n=1$, $t^2=1$, and $tst=s^{-1}$.\\
+	\\
+	Note that $D_{2n}$ is not abelian for all $n\geq 3$, while $D_4$ is the Klein 4-group $\mathbf{V}$.
+\end{definition}
+
+\chapter{The Sylow Theorems}
+
+\section{\textit{p}-Groups}
+\begin{definition}
+	If $p$ is a prime, then a \term{p-group} is a group in which every element has order a power of $p$.
+\end{definition}
+
+\begin{lemma}
+	If $G$ is a finite abelian group whose order is divisible by a prime $p$, then $G$ contains an element of order $p$.
+\end{lemma}
+
+\begin{theorem}[Cauchy, 1845]
+	If $G$ is a finite group whose order is divisible by a prime $p$, then $G$ contains an element of order $p$.
+\end{theorem}
+
+\begin{definition}
+	The following is called the \term{class equation} of the finite group $G$.
+	\[ |G| = |Z(G)| + \sum_i \; \left[ G : C_G(x_i) \right] \]
+	$Z(G)$ consists of all the elements of $G$ whose conjugacy class has just one element; each $x_i$ is selected from each conjugacy class with more than one element.
+\end{definition}
+
+\begin{corollary}
+	A finite group $G$ is a p-group if and only if $|G|$ is a power of $p$.
+\end{corollary}
+
+\begin{theorem}
+	If $G\neq 1$ is a finite p-group, then its center $Z(G)\neq 1$.
+\end{theorem}
+
+\begin{corollary}
+	If $p$ is a prime, then every group $G$ of order $p^2$ is abelian.
+\end{corollary}
+
+\begin{theorem}
+	Let $G$ be a finite p-group.
+	\begin{enumerate}
+		\item If $H$ is a proper subgroup of $G$, then $H<N_G(H)$.
+		\item Every maximal subgroup of G is normal and has index $p$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+	If $G$ is a finite p-group and $r_1$ is the number of subgroups of $G$ having order $p$, then $r_1\equiv 1\mod p$.
+\end{lemma}
+
+\begin{theorem}
+	If $G$ is a finite p-group and $r_s$ is the number of subgroups of $G$ having order $p^s$, then $r_s\equiv 1\mod p$.
+\end{theorem}
+
+\begin{lemma}[Landau, 1903]
+	Given $n>0$ and $q\in\mathbb{Q}$, there are only finitely many $n$-tuples $(i_1,\,\ldots\,,i_n)$ of positive integers such that $q=\sum_{j=1}^n (1/i_j)$.
+\end{lemma}
+
+\begin{theorem}
+	For every $n\geq 1$, there are only finitely many groups having exactly $n$ conjugacy classes.
+\end{theorem}
+
+\section{The Sylow Theorems}
+\begin{definition}
+	If $p$ is a prime, then a \term{Sylow p-subgroup} $P$ of a group $G$ is a maximal $p$-subgroup.
+\end{definition}
+
+\begin{lemma}
+	Let $P$ be a Sylow $p$-subgroup of a finite group $G$.
+	\begin{enumerate}
+		\item $\left|\faktor{N_G(P)}{P}\right|$ is prime to $p$.
+		\item If $a\in G$ has order some power of $p$ and $aPa^{-1}=P$, then $a\in P$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{theorem}[Sylow, 1872]
+	\quad
+	\begin{enumerate}
+		\item If $P$ is a Sylow $p$-subgroup of a finite group $G$, then all Sylow $p$-subgroups of $G$ are conjugate to $P$.
+		\item If there are $r$ Sylow $p$-subgroups, then $r$ is a divisor of $|G|$ and $r\equiv 1\mod p$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	A finite group $G$ has a unique Sylow $p$-subgroup $P$, for some prime $p$, if and only if $P\vartriangleleft G$.
+\end{corollary}
+
+\begin{theorem}
+	If $G$ is a finite group of order $p{^e}m$, where $\gcd(p,m)=1$, then every Sylow $p$-subgroup $P$ of $G$ has order $p^e$.
+\end{theorem}
+
+\begin{corollary}
+	Let $G$ be a finite group and let $p$ be prime. If $p^k$ divides $|G|$, then $G$ contains a subgroup of order $p^k$.
+\end{corollary}
+
+\begin{lemma}
+	If $p$ is a prime not dividing an integer $m$, then for all $n\geq 1$, the binomial coefficient $\binom{p{^n}m}{p^n}$ is not divisible by $p$.
+\end{lemma}
+
+\begin{theorem}[Wielandt's Proof]
+	If $G$ is a finite group of order $p{^n}m$, where $\gcd(p,m)=1$, then $G$ has a subgroup of order $p^n$.
+\end{theorem}
+
+\begin{theorem}[Frattini Argument]
+	Let $K$ be a normal subgroup of a finite group $G$. If $P$ is a Sylow $p$-subgroup of $K$ (for some prime $p$), then $G=KN_G(P)$.
+\end{theorem}
+
+\begin{definition}
+	An $n\times n$ matrix $A$ over a commutative ring $R$ is \term{unitriangular} if it has $0$s below the diagonal and $1$s on the diagonal.
+	The set of all unitriangular $3\times 3$ matrices over $\mathbb{Z}_p$ is denoted by $\mathrm{UT}(3,\mathbb{Z}_p)$.
 \end{definition}
 \end{document}
