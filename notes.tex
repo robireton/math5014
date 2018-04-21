@@ -416,7 +416,7 @@
 \end{theorem}
 
 \begin{theorem}[Third Isomorphism Theorem]
-	Let $K\leq H\leq G$, where both $K$ and $H$ are subgroups of $G$. Then $\faktor{H}{K}$ is a normal subgroup of $\faktor{G}{K}$ and
+	Let $K\leq H\leq G$, where both $K$ and $H$ are normal subgroups of $G$. Then $\faktor{H}{K}$ is a normal subgroup of $\faktor{G}{K}$ and
 	\[ \faktor{\left(\faktor{G}{K}\right)}{\left(\faktor{H}{K}\right)}\cong\faktor{G}{H}. \]
 \end{theorem}
 
@@ -633,7 +633,7 @@
 
 \section{Some Geometry}
 \begin{definition}
-	The \term{dihedral group} $D_{2n}$, for $2n\geq 4$, is a group of order $2n$ which is genrerated by two elements $s$ and $t$ such that $s_n=1$, $t^2=1$, and $tst=s^{-1}$.\\
+	The \term{dihedral group} $D_{2n}$, for $2n\geq 4$, is a group of order $2n$ which is genrerated by two elements $s$ and $t$ such that $s^n=1$, $t^2=1$, and $tst=s^{-1}$.\\
 	\\
 	Note that $D_{2n}$ is not abelian for all $n\geq 3$, while $D_4$ is the Klein 4-group $\mathbf{V}$.
 \end{definition}
@@ -751,7 +751,7 @@
 \end{theorem}
 
 \begin{theorem}
-	Let $|G|=pq$, where $p>q$ are primes. Then either $G$ is cyclic or $G=\langle a,b\rangle$, where $b^p=1$, $a^q=1$, $aba^{-1}=b^m$, and $m^q\equiv 1\mod p$, but $m\not\equiv 1\mod p$.
+	Let $|G|=pq$, where $p>q$ are primes. Then either $G$ is cyclic or $G=\gen{a,b}$, where $b^p=1$, $a^q=1$, $aba^{-1}=b^m$, and $m^q\equiv 1\mod p$, but $m\not\equiv 1\mod p$.
 	If $q\nmid p-1$, then the second case cannot occur.
 \end{theorem}
 
@@ -760,7 +760,7 @@
 \end{corollary}
 
 \begin{definition}
-	The \term{quaternions} is a group $\mathbf{Q}=\langle a,b\rangle$ of order $8$ with $a^4=1$, $b^2=a^2$, and $bab^{-1}=a^{-1}$.
+	The \term{quaternions} is a group $\mathbf{Q}=\gen{a,b}$ of order $8$ with $a^4=1$, $b^2=a^2$, and $bab^{-1}=a^{-1}$.
 \end{definition}
 
 \begin{theorem}
@@ -812,5 +812,144 @@ Order $n$ & $\mathfrak{G}(n)$ & Groups \\ \hline
 \chapter{Normal Series}
 
 \section{Some Galois Theory}
+\begin{definition}
+	If $F$ is a subfield of an algebraically closed field $C$, and $\alpha$ is an element of $C$, then $F(\alpha)$ is the subfield obtained from $F$ by \term{adjoining} $\alpha$.
+\end{definition}
 
+\begin{definition}
+	If $f(x)\in F[x]$ and $f(x) = (x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_n)\in C[x]$, then $F(\alpha_1, \alpha_2, \ldots, \alpha_n)$, the subfield obtained from $F$ by adjoining all the roots of $f(x)$, is called the \term{splitting field} of $f(x)$ over $F$.
+\end{definition}
+
+\begin{definition}
+	Let $f(x)\in F[x]$ have splitting field $E$ over $F$. Then $f(x)$ is \term{solvable by radicals} if there is a chain of subfields
+	\[ F = K_0\subset K_1\subset\cdots\subset K_t\text{,}\]
+	in which $E\subset K_t$ and each $K_{i+1}$ is obtained from $K_i$ by adjoining a root of an element of $K_i$; that is, $K_{i+1}=K_i(\beta_{i+1})$, where $\beta_{i+1}\in K_{i+1}$ and some power of $\beta_{i+1}$ lies in $K_i$.
+\end{definition}
+
+\begin{definition}
+	If $E$ and $E'$ are fields, then a \term{field homomorphism} is a function $\sigma:E\to E'$ such that, for all $\alpha,\beta\in E$
+	\begin{align*}
+		\sigma(1) &= 1 \\
+		\sigma(\alpha+\beta) &= \sigma(\alpha)+\sigma(\beta) \\
+		\sigma(\alpha\beta) &= \sigma(\alpha)\sigma(\beta)
+	\end{align*}
+	If $\sigma$ is a bijection, then $\sigma$ is a \term{field isomorphism}; a field isomorphism $\sigma:E\to E$ is called a \term{field automorphism}.
+\end{definition}
+
+\begin{lemma}
+	Let $f(x)\in F[x]$, let $E$ be its splitting field over $F$, and let $\sigma:E\to E$ be an automorphism \term{fixing} $F$ (i.e., $\sigma(a)=a$ for all $a\in F$).
+	If $\alpha\in E$ is a root of $f(x)$, then $sigma(\alpha)$ is also a root of $f(x)$.
+\end{lemma}
+
+\begin{lemma}
+	Let $F$ be a subfield of $K$, let $\{\alpha_1,\ldots,\alpha_n\}\subset K$, and let $E=F(\alpha_1,\ldots,\alpha_n)$. If $K'$ is a field containing $F$ as a subfield, and if $\sigma:E\to K'$ is a field homomorphism fixing $F$ with $\sigma(\alpha_i)=\alpha_i$ for all $i$, then $\sigma$ is the identity.
+\end{lemma}
+
+\begin{definition}
+	If $F$ is a subfield of $E$, then the \term{Galois group}, denoted by $\mathrm{Gal}(E/F)$, is the group under composition of all those automorphisms of $E$ which fix $F$.
+	If $f(x)\in F[x]$ and $E=F(\alpha_1,\ldots,\alpha_n)$ is the splitting field of $f(x)$ over $F$, then the \term{Galois group} of $f(x)$ is $\mathrm{Gal}(E/F)$.
+\end{definition}
+
+\begin{definition}
+	If $F$ is a subfield of a field $E$, then $E$ is a \term{vector space} over $F$ (if $a\in F$ and $\alpha\in E$, define scalar multiplication to be the given product $a\alpha$ of two elements of $E$).
+	The \term{degree} of $E$ over $F$, denoted by $[E:F]$, is the dimension of $E$.
+\end{definition}
+
+\begin{definition}
+	A \term{normal series} of a group $G$ is a sequence of subgroups
+	\[ G = G_0 \geq G_1 \geq \cdots \geq G_n = 1 \]
+	in which $G_{i+1}\vartriangleleft G_i$ for all $i$.
+	The \term{factor groups} of this normal series are the groups $\faktor{G_i}{G_{i+1}}$ for $i=0, 1, \ldots, n-1$; the \term{length} of the normal series is the number of strict inclusions; that is, the length is the number of nontrivial factor groups.
+\end{definition}
+
+\begin{definition}
+	A finite group $G$ is \term{solvable} if it has a normal series whose factor groups are cyclic of prime order.
+\end{definition}
+
+
+\section{The Jordan–Hölder Theorem}
+
+\begin{definition}
+	A normal series
+	\[ G = H_0 \geq H_1 \geq \cdots \geq H_m = 1 \]
+	is a \term{refinement} of a normal series
+	\[ G = G_0 \geq G_1 \geq \cdots \geq G_n = 1 \]
+	if $G_0, G_1, \ldots, G_n$ is a subsequence of $H_0, H_1, \ldots, H_m$.\\
+	\par
+	A refinement is thus a normal series containing each of the terms of the original series.
+\end{definition}
+
+\begin{definition}
+	A \term{composition series} is a normal series
+	\[ G = G_0 \geq G_1 \geq \cdots \geq G_n = 1 \]
+	in which, for all $i$, either $G_{i+1}$ is a maximal normal subgroup of $G_i$ or $G_{i+1}=G_i$.\\
+	\par
+	Every refinement of a composition series is also a composition series; it can only repeat some of the original terms.
+\end{definition}
+
+\setcounter{theorem}{9}
+
+\begin{lemma}[Zassenhaus, 1934]
+	Let $A\vartriangleleft A^*$ and $B\vartriangleleft B^*$ be four subgroups of a group $G$. Then
+	\[
+		A(A^*\cap B) \vartriangleleft A(A^*\cap B^*),\\
+		B(A\cap B^*) \vartriangleleft B(A^*\cap B^*),
+	\]
+	and there is an isomorphism
+	\[
+		\faktor{A(A^*\cap B^*)}{A(A^*\cap B)}\cong\faktor{B(A^*\cap B^*)}{B(A\cap B^*)}
+	\]
+\end{lemma}
+
+\begin{theorem}[Schreier Refinement, 1928]
+	Every two normal series of an arbitrary group $G$ have refinements that are equivalent.
+\end{theorem}
+
+
+\chapter{Finite Direct Products}
+
+\section{The Basis Theorem}
+When dealing exclusively with abelian groups, it is customary to use additive notation instead of multiplicative notation.\\
+\\
+\begin{tabular}{c c}
+multiplicative & additive \\ \hline
+$ab$ & $a+b$ \\
+$1$ & $0$ \\
+$a^{-1}$ & $-a$ \\
+$a^n$ & $na$ \\
+$ab^{-1}$ & $a-b$ \\
+$HK$ & $H+K$ \\
+$aH$ & $a+H$ \\
+direct product & direct sum \\
+$H\times K$ & $H\oplus K$ \\
+$\prod{H_i}$ & $\sum{H_i}$ \\
+\end{tabular}
+\\
+
+\begin{definition}
+	If $G$ is an abelian $p$-group for some prime $p$, then $G$ is also called a \term{p-primary group}.
+\end{definition}
+
+\begin{theorem}[Primary Decomposition]
+	Every finite abelian group $G$ is a direct sum of $p$-primary groups.
+\end{theorem}
+
+\begin{definition}
+	When $G$ is an abelian group, its Sylow $p$-subgoups, $G_p$ are called the \term{p-primary components} of $G$.
+\end{definition}
+
+\begin{definition}
+	A set $\{x_1,\ldots,x_r\}$ of nonzero elements in an abelian group is \term{independent} if, whenever there are integers $m_1,\ldots,m_r$ with
+	$\sum_{i=1}^r m_i x_i =0$, then each $m_i x_i = 0$.
+\end{definition}
+
+\begin{lemma}
+	If $G$ is an abelian group, then a subset $\{x_1,\ldots,x_r\}$ of nonzero elements of $G$ is independent if and only if $\gen{x_1,\ldots,x_r}=\gen{x_1}\oplus\cdots\oplus\gen{x_r}$.
+\end{lemma}
+
+\setcounter{theorem}{4}
+
+\begin{theorem}[Basis Theorem]
+	Every finite abelian group $G$ is a direct sum of primary cyclic groups.
+\end{theorem}
 \end{document}
