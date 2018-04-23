@@ -1,0 +1,219 @@
+\documentclass[12pt]{report}
+\usepackage[top=0.75in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, faktor, caption}
+\usepackage{mathspec} %loads fontspec as well
+\setallmainfonts(Digits,Latin,Greek){Alegreya}
+
+\title{Group Theory Concepts}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{notation}{Notation}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\term}[1]{\textbf{\textit{#1}}}
+\newcommand{\gen}[1]{{\langle}#1{\rangle}}
+
+\renewcommand{\labelenumi}{\textnormal{(\roman{enumi})}}
+
+\begin{document}
+\chapter{Normal Subgroups \& Series}
+\section{Definitions}
+
+\begin{definition}
+	A subgroup $K\leq G$ is a \term{normal subgroup}, denoted by $K\vartriangleleft G$, if $gKg^{-1}=K$ for every $g\in G$.
+\end{definition}
+
+\begin{definition}
+	A subgroup $H\leq G$ is a \term{maximal normal subgroup} of $G$ if there is no normal subgroup $N$ of $G$ with $H<N<G$.
+\end{definition}
+
+\begin{definition}
+	A group $G\neq 1$ is \term{simple} if it has no normal subgroups other than $G$ and $1$.
+\end{definition}
+
+\begin{definition}
+	If $H\leq G$, then the \term{normalizer} of $H$ in $G$, denoted by $N_G(H)$, is
+	\[N_G(H)=\{a\in G:aHa^{-1}=H\}.\]
+\end{definition}
+
+\begin{definition}
+	A \term{normal series} of a group $G$ is a sequence of subgroups
+	\[ G = G_0 \geq G_1 \geq \cdots \geq G_n = 1 \]
+	in which $G_{i+1}\vartriangleleft G_i$ for all $i$.
+	The \term{factor groups} of this normal series are the groups $\faktor{G_i}{G_{i+1}}$ for $i=0, 1, \ldots, n-1$; the \term{length} of the normal series is the number of strict inclusions; that is, the length is the number of nontrivial factor groups.
+\end{definition}
+
+\begin{definition}
+	A finite group $G$ is \term{solvable} if it has a normal series whose factor groups are cyclic of prime order.
+\end{definition}
+
+\begin{definition}
+	A normal series
+	\[ G = H_0 \geq H_1 \geq \cdots \geq H_m = 1 \]
+	is a \term{refinement} of a normal series
+	\[ G = G_0 \geq G_1 \geq \cdots \geq G_n = 1 \]
+	if $G_0, G_1, \ldots, G_n$ is a subsequence of $H_0, H_1, \ldots, H_m$.\\
+	\par
+	A refinement is thus a normal series containing each of the terms of the original series.
+\end{definition}
+
+\begin{definition}
+	A \term{composition series} is a normal series
+	\[ G = G_0 \geq G_1 \geq \cdots \geq G_n = 1 \]
+	in which, for all $i$, either $G_{i+1}$ is a maximal normal subgroup of $G_i$ or $G_{i+1}=G_i$.\\
+	\par
+	Every refinement of a composition series is also a composition series; it can only repeat some of the original terms.
+\end{definition}
+
+
+
+\section{Theorems}
+
+\begin{theorem}
+	If $N\vartriangleleft G$, then the cosets of $N$ in $G$ form a group, denoted by $\faktor{G}{N}$, of order $[G:N]$.
+\end{theorem}
+
+\begin{theorem}
+	If $N\vartriangleleft G$, then the \term{natural map} (i.e., the function $\nu:G\to\faktor{G}{N}$ defined by $\nu(a)=Na$) is a surjective homomorphism with kernel $N$.
+\end{theorem}
+
+\begin{theorem}
+	The commutator subgroup $G'$ is a normal subgroup of $G$. Moreover, if $H\vartriangleleft G$, then $\faktor{G}{H}$ is abelian if and only if $G'\leq H$.
+\end{theorem}
+
+\begin{theorem}[First Isomorphism Theorem]
+	Let $f:G\to H$ be a homomorphism with kernel $K$. Then $K$ is a normal subgroup of $G$ and $\faktor{G}{K}\cong \mathrm{im}\;f$.
+\end{theorem}
+
+\begin{theorem}
+	If $S$ and $T$ are subgroups of $G$ and if one of them is normal, then $ST=S\vee T=TS$.
+\end{theorem}
+
+\begin{theorem}[Second Isomorphism Theorem]
+	Let $N$ and $T$ be subgroups of $G$ with $N$ normal. Then $N\cap T$ is normal in $T$ and $\faktor{T}{N\cap T}\cong\faktor{NT}{N}$.
+\end{theorem}
+
+\begin{theorem}[Third Isomorphism Theorem]
+	Let $K\leq H\leq G$, where both $K$ and $H$ are normal subgroups of $G$. Then $\faktor{H}{K}$ is a normal subgroup of $\faktor{G}{K}$ and
+	\[ \faktor{\left(\faktor{G}{K}\right)}{\left(\faktor{H}{K}\right)}\cong\faktor{G}{H}. \]
+\end{theorem}
+
+\begin{theorem}[Correspondence Theorem]
+	Let $K\vartriangleleft G$ and let $\nu:G\mapsto\faktor{G}{K}$ be the natural map.
+	Then $S\mapsto\nu(S)=\faktor{S}{K}$ is a bijection from the family of all those subgroups $S$ of $G$ which contain $K$
+	to the family of all the subgroups of $\faktor{G}{K}$.
+	\par
+	Moreover, if we denote $\faktor{S}{K}$ by $S^\ast$, then:
+	\begin{enumerate}
+		\item $T\leq S$ if and only if $T^\ast\leq S^\ast$, and then $[S:T]=[S^\ast:T^\ast]$; and
+		\item $T\vartriangleleft S$ if and only if $T^\ast\vartriangleleft S^\ast$, and then $\faktor{S}{T}\cong\faktor{S^\ast}{T^\ast}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	Let $G$ be a group with normal subgroups $H$ and $K$. If $HK=G$ and $H\cap K=1$, then $G\cong H\times K$.
+\end{theorem}
+
+\begin{theorem}
+	If $A\vartriangleleft H$ and $B\vartriangleleft K$ then $A\times B\vartriangleleft H\times K$ and
+	$\faktor{H\times K}{A\times B}\cong\faktor{H}{A}\times\faktor{K}{B}$.
+\end{theorem}
+
+\begin{theorem}
+	If $H\leq G$, then the number $c$ of conjugates of $H$ in $G$ is equal to the index of its normalizer: $c=[G:N_G(H)]$, and $c$ divides $|G|$ when $G$ is finite.
+	Moreover, $aHa^{-1}=bHb^{-1}$ if and only if $b^{-1}a\in N_G(H)$.
+\end{theorem}
+
+\begin{theorem}
+	A subgroup $H$ of $S_n$ is a normal subgroup if and only if, whenever $\alpha\in H$, then every $\beta$ having the same
+	cycle structure as $\alpha$ also lies in $H$.
+\end{theorem}
+
+\begin{theorem}
+	Let $H\vartriangleleft A_n$, where $n\geq 5$. If $H$ contains a 3-cycle, then $H = A_n$.
+\end{theorem}
+
+\begin{theorem}
+	$A_n$ is simple for all $n\geq 5$.
+\end{theorem}
+
+\begin{theorem}
+	An simple group $G$ which contains a subgroup $H$ of index $n$ can be imbedded in $S_n$.
+\end{theorem}
+
+\begin{theorem}
+	An infinite simple group $G$ has no proper subgroups of finite index.
+\end{theorem}
+
+\begin{theorem}
+	Let $G$ be a finite p-group.
+	\begin{enumerate}
+		\item If $H$ is a proper subgroup of $G$, then $H<N_G(H)$.
+		\item Every maximal subgroup of $G$ is normal and has index $p$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	A finite group $G$ has a unique Sylow $p$-subgroup $P$, for some prime $p$, if and only if $P\vartriangleleft G$.
+\end{theorem}
+
+\begin{theorem}[Frattini Argument]
+	Let $K$ be a normal subgroup of a finite group $G$. If $P$ is a Sylow $p$-subgroup of $K$ (for some prime $p$), then $G=KN_G(P)$.
+\end{theorem}
+
+\begin{theorem}
+	If $p>q$ are primes, then every group $G$ of order $pq$ contains a normal subgroup of order $p$. Moreover, if $q$ does not divide $p-1$, then $G$ must be cyclic.
+\end{theorem}
+
+\begin{theorem}
+	If $G$ has order $12$ and $G\ncong A_4$, then $G$ contains an element of order 6; moreover, $G$ has a normal Sylow 3-subgroup, hence has exactly two elements of order $3$.
+\end{theorem}
+
+
+\begin{theorem}[Zassenhaus, 1934]
+	Let $A\vartriangleleft A^*$ and $B\vartriangleleft B^*$ be four subgroups of a group $G$. Then
+	\[
+		A(A^*\cap B) \vartriangleleft A(A^*\cap B^*),\\
+		B(A\cap B^*) \vartriangleleft B(A^*\cap B^*),
+	\]
+	and there is an isomorphism
+	\[
+		\faktor{A(A^*\cap B^*)}{A(A^*\cap B)}\cong\faktor{B(A^*\cap B^*)}{B(A\cap B^*)}
+	\]
+\end{theorem}
+
+\begin{theorem}[Schreier Refinement, 1928]
+	Every two normal series of an arbitrary group $G$ have refinements that are equivalent.
+\end{theorem}
+
+
+
+\section{Facts}
+\begin{itemize}
+	\item If $S\leq G$ and $[G:S]=2$, then $S\vartriangleleft G$.
+	\item If $G$ is abelian, then every subgroup of $G$ is normal. The converse is false.
+	\item If $H\leq G$ then $H\vartriangleleft G$ if and only if, for all $x,y\in G$, $xy\in H$ if and only if $yx\in H$.
+	\item If $K\leq H\leq G$ and $K\vartriangleleft G$, then $K\vartriangleleft H$.
+	\item A subgroup $S$ of $G$ is normal if and only if $s\in S$ implies that every conjugate of $s$ is also in $S$. Conclude that if $S\leq G$, then $S\vartriangleleft G$ if and only if $\gamma(S)\leq S$ for every conjugation $\gamma$.
+	\item $A_n\vartriangleleft S_n$ for every $n$.
+	\item The intersection of any family of normal subgroups of a group $G$ is itself a normal subgroup of $G$. Conclude that if $X$ is a subset of $G$, then there is a smallest normal subgroup of $G$ which contains $X$; it is called the normal subgroup generated by $X$.
+	\item If $H$ and $K$ are normal subgroups of $G$, then $H\vee K\vartriangleleft G$.
+	\item If a normal subgroup $H$ of $G$ has index $n$, then $g^n\in H$ for all $g\in G$.
+	\item A subgroup $K$ of $G$ is normal in $G$ if and only if $Kg = gK$ for every $g\in G$, for associativity of the multiplication of nonempty subsets gives $K = (Kg)g^{-1} = gKg^{-1}$.
+	\item Every normal subgroup is the kernel of some homomorphism.
+	\item The 4-group $\mathbf{V}$ is a normal subgroup of $S_4$.
+	\item Normality need not be transitive; that is, $K\vartriangleleft H$ and $H\vartriangleleft G$ need not imply $K\vartriangleleft G$.
+	\item $H$ is a maximal normal subgroup of $G$ if and only if $\faktor{G}{H}$ has no normal subgroups (other than itself and $1$), that is, $\faktor{G}{H}$ is simple.
+	\item An abelian group is simple if and only if it is finite and of prime order.
+	\item A subgroup is normal if and only if it is a (disjoint) union of conjugacy classes.
+	\item $Z(G)$ is a normal abelian subgroup of $G$.
+	\item $H\vartriangleleft N_G(H)$; indeed, $N_G(H)$ is the largest subgroup of $G$ in which $H$ is normal.
+	\item If $|G|=p^n$, where $p$ is prime, and if $0\le k\le n$, then $G$ contains a normal subgroup of order $p^k$.
+	\item If $Q$ is a normal $p$-subgroup of a finite group $G$, then $Q\le P$ for every Sylow $p$-subgroup $P$.
+\end{itemize}
+
+
+
+\end{document}
